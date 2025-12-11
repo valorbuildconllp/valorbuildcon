@@ -21,7 +21,7 @@ const ServicesSection = () => {
     <section className="py-20 bg-muted/30">
       <div className="container">
         <div className="text-center mb-12">
-          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR SERVICES
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -35,7 +35,7 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* RCC Work Card */}
-          <div className="bg-card border border-border overflow-hidden group">
+          <div className="bg-card border border-border overflow-hidden group rounded-lg">
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={rccImage} 
@@ -55,7 +55,7 @@ const ServicesSection = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 {rccServices.map((service) => (
-                  <div key={service.title} className="text-center p-4 bg-muted/50">
+                  <div key={service.title} className="text-center p-4 bg-muted/50 rounded-md">
                     <service.icon className="h-8 w-8 text-secondary mx-auto mb-2" />
                     <h4 className="font-medium text-foreground text-sm">{service.title}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{service.description}</p>
@@ -72,7 +72,7 @@ const ServicesSection = () => {
           </div>
 
           {/* RMC Plant Card */}
-          <div className="bg-card border border-border overflow-hidden group">
+          <div className="bg-card border border-border overflow-hidden group rounded-lg">
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={rmcImage} 
@@ -92,7 +92,7 @@ const ServicesSection = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 {rmcServices.map((service) => (
-                  <div key={service.title} className="text-center p-4 bg-muted/50">
+                  <div key={service.title} className="text-center p-4 bg-muted/50 rounded-md">
                     <service.icon className="h-8 w-8 text-secondary mx-auto mb-2" />
                     <h4 className="font-medium text-foreground text-sm">{service.title}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{service.description}</p>

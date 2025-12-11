@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0" />
-                <a href="mailto:info@valorbuildcom.com" className="opacity-80 hover:opacity-100">
+              <a href="mailto:info@valorbuildcon.com" className="opacity-80 hover:opacity-100">
                   info@valorbuildcon.com
                 </a>
               </li>
@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <p className="opacity-80">
-              © {new Date().getFullYear()} Valor Buildcom LLP. All Rights Reserved.
+              © {new Date().getFullYear()} Valor Buildcon LLP. All Rights Reserved.
             </p>
             <div className="flex gap-6">
               <Link to="/privacy" className="opacity-80 hover:opacity-100">Privacy Policy</Link>

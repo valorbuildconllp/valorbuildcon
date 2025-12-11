@@ -37,7 +37,7 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span className="hidden sm:inline">+91 98765 43210</span>
             </a>
-            <a href="mailto:info@valorbuildcom.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:info@valorbuildcon.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="h-4 w-4" />
               <span className="hidden sm:inline">info@valorbuildcon.com</span>
             </a>

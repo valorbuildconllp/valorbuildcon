@@ -35,7 +35,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 bg-background">
       <div className="container">
         <div className="text-center mb-12">
-          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR PORTFOLIO
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-card border border-border overflow-hidden group"
+              className="bg-card border border-border overflow-hidden group rounded-lg"
             >
               <div className="relative h-64 overflow-hidden">
                 <img 
@@ -59,7 +59,7 @@ const ProjectsSection = () => {
                   alt={project.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
+                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium rounded">
                   {project.type}
                 </div>
               </div>

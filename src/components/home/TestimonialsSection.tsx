@@ -6,21 +6,21 @@ const TestimonialsSection = () => {
       name: "Rajesh Patel",
       company: "Patel Constructions",
       role: "Managing Director",
-      content: "Valor Buildcom's RCC work quality is exceptional. Their team completed our 10-story residential project with outstanding precision and on schedule. Highly recommend their services.",
+      content: "Valor Buildcon's RCC work quality is exceptional. Their team completed our 10-story residential project with outstanding precision and on schedule. Highly recommend their services.",
       rating: 5,
     },
     {
       name: "Amit Shah",
       company: "Shah Infrastructure",
       role: "Project Manager",
-      content: "The RMC supply from Valor Buildcom is always consistent and timely. Their mix design team helped us achieve the perfect concrete grade for our industrial warehouse project.",
+      content: "The RMC supply from Valor Buildcon is always consistent and timely. Their mix design team helped us achieve the perfect concrete grade for our industrial warehouse project.",
       rating: 5,
     },
     {
       name: "Priya Mehta",
       company: "Mehta Developers",
       role: "Director",
-      content: "Working with Valor Buildcom has been a pleasure. Their professional approach, quality materials, and expert team make them our preferred construction partner.",
+      content: "Working with Valor Buildcon has been a pleasure. Their professional approach, quality materials, and expert team make them our preferred construction partner.",
       rating: 5,
     },
   ];
@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
     <section className="py-20 bg-muted/30">
       <div className="container">
         <div className="text-center mb-12">
-          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             CLIENT TESTIMONIALS
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our valued clients 
-            have to say about working with Valor Buildcom.
+            have to say about working with Valor Buildcon.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="bg-card border border-border p-8 relative"
+              className="bg-card border border-border p-8 relative rounded-lg"
             >
               <Quote className="h-10 w-10 text-muted/50 absolute top-6 right-6" />
               <div className="flex gap-1 mb-4">
