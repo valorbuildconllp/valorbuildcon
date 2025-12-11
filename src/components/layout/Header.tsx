@@ -39,7 +39,7 @@ const Header = () => {
             </a>
             <a href="mailto:info@valorbuildcom.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="h-4 w-4" />
-              <span className="hidden sm:inline">info@valorbuildcom.com</span>
+              <span className="hidden sm:inline">info@valorbuildcon.com</span>
             </a>
           </div>
           <div className="text-xs sm:text-sm">
