@@ -96,7 +96,7 @@ const RCCWorkPage = () => {
         </div>
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               RCC STRUCTURAL WORK
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-background mb-4">
@@ -120,7 +120,7 @@ const RCCWorkPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR SERVICES
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -133,7 +133,7 @@ const RCCWorkPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-card border border-border p-6 hover:border-primary transition-colors">
+              <div key={index} className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg">
                 <service.icon className="h-10 w-10 text-secondary mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
@@ -147,7 +147,7 @@ const RCCWorkPage = () => {
       <section className="py-20 bg-muted/30">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR WORK
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -157,7 +157,7 @@ const RCCWorkPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-card border border-border overflow-hidden group">
+              <div key={index} className="bg-card border border-border overflow-hidden group rounded-lg">
                 <div className="relative h-64 overflow-hidden">
                   <img 
                     src={project.image} 
@@ -184,7 +184,7 @@ const RCCWorkPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR PROCESS
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -195,7 +195,7 @@ const RCCWorkPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {howWeWork.map((item, index) => (
               <div key={index} className="relative">
-                <div className="bg-card border border-border p-6 h-full">
+                <div className="bg-card border border-border p-6 h-full rounded-lg">
                   <div className="text-4xl font-bold text-secondary/30 mb-4">{item.step}</div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.description}</p>
@@ -214,14 +214,14 @@ const RCCWorkPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4">
+              <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
                 SAFETY FIRST
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 Safety Measures We Take
               </h2>
               <p className="opacity-80 mb-8">
-                At Valor Buildcom, safety is our top priority. We implement comprehensive 
+                At Valor Buildcon, safety is our top priority. We implement comprehensive 
                 safety protocols to ensure the well-being of our workers and stakeholders.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -234,7 +234,7 @@ const RCCWorkPage = () => {
               </div>
             </div>
             <div>
-              <img src={teamImage} alt="Safety measures" className="w-full h-[400px] object-cover" />
+              <img src={teamImage} alt="Safety measures" className="w-full h-[400px] object-cover rounded-lg" />
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ const RCCWorkPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR CAPABILITIES
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -254,7 +254,7 @@ const RCCWorkPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {assets.map((asset, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center">
+              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
                 <div className="text-3xl font-bold text-primary mb-2">{asset.count}</div>
                 <div className="text-sm text-muted-foreground">{asset.name}</div>
               </div>
@@ -268,7 +268,7 @@ const RCCWorkPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="bg-muted h-[400px] w-full flex items-center justify-center">
+              <div className="bg-muted h-[400px] w-full flex items-center justify-center rounded-lg">
                 <div className="text-center">
                   <Users className="h-20 w-20 text-muted-foreground mx-auto mb-4" />
                   <p className="text-muted-foreground">Director Photo</p>
@@ -276,14 +276,14 @@ const RCCWorkPage = () => {
               </div>
             </div>
             <div>
-              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 LEADERSHIP
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Our Director
               </h2>
               <h3 className="text-xl text-secondary mb-4">Mr. Vikram Patel</h3>
-              <p className="text-muted-foreground mb-4">Managing Director, Valor Buildcom LLP</p>
+              <p className="text-muted-foreground mb-4">Managing Director, Valor Buildcon LLP</p>
               <p className="text-muted-foreground leading-relaxed">
                 With over 20 years of experience in the construction industry, Mr. Vikram Patel 
                 leads Valor Buildcom with a vision of excellence and innovation. Under his 
@@ -296,7 +296,7 @@ const RCCWorkPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-secondary rounded-lg mx-4 mb-4">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">

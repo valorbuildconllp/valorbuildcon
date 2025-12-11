@@ -82,7 +82,7 @@ const RMCPlantPage = () => {
         </div>
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               READY MIX CONCRETE
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-background mb-4">
@@ -106,7 +106,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT INFORMATION
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -120,7 +120,7 @@ const RMCPlantPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {plantInfo.map((info, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center">
+              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
                 <div className="text-2xl font-bold text-primary mb-2">{info.value}</div>
                 <div className="text-sm text-muted-foreground">{info.label}</div>
               </div>
@@ -133,7 +133,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-muted/30">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR ASSETS
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -143,7 +143,7 @@ const RMCPlantPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {assets.map((asset, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center">
+              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
                 <asset.icon className="h-12 w-12 text-secondary mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">{asset.name}</h3>
                 <p className="text-sm text-muted-foreground">{asset.description}</p>
@@ -157,7 +157,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CONCRETE GRADES
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -171,7 +171,7 @@ const RMCPlantPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {concreteGrades.map((item, index) => (
-              <div key={index} className="bg-card border border-border p-6">
+              <div key={index} className="bg-card border border-border p-6 rounded-lg">
                 <div className="text-2xl font-bold text-primary mb-2">{item.grade}</div>
                 <div className="text-sm text-muted-foreground">{item.application}</div>
               </div>
@@ -185,7 +185,7 @@ const RMCPlantPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4">
+              <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
                 QUALITY ASSURANCE
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
@@ -206,7 +206,7 @@ const RMCPlantPage = () => {
               </div>
             </div>
             <div>
-              <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[400px] object-cover" />
+              <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[400px] object-cover rounded-lg" />
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR CLIENTS
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -230,7 +230,7 @@ const RMCPlantPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {clients.map((client, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center flex items-center justify-center h-24">
+              <div key={index} className="bg-card border border-border p-6 text-center flex items-center justify-center h-24 rounded-lg">
                 <span className="font-medium text-foreground">{client}</span>
               </div>
             ))}
@@ -242,7 +242,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-muted/30">
         <div className="container">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               LEADERSHIP
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -252,8 +252,8 @@ const RMCPlantPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {managementTeam.map((member, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center">
-                <div className="w-20 h-20 bg-muted mx-auto mb-4 flex items-center justify-center">
+              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
+                <div className="w-20 h-20 bg-muted mx-auto mb-4 flex items-center justify-center rounded-full">
                   <Users className="h-10 w-10 text-muted-foreground" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
@@ -270,13 +270,13 @@ const RMCPlantPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 LOCATION
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
                 Plant Location
               </h2>
-              <div className="bg-muted h-[300px] flex items-center justify-center border border-border">
+              <div className="bg-muted h-[300px] flex items-center justify-center border border-border rounded-lg">
                 <div className="text-center">
                   <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-muted-foreground">Google Map</p>
@@ -288,7 +288,7 @@ const RMCPlantPage = () => {
               </div>
             </div>
             <div>
-              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 DELIVERY AREA
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
@@ -326,7 +326,7 @@ const RMCPlantPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-secondary rounded-lg mx-4 mb-4">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">

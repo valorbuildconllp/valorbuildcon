@@ -20,8 +20,8 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4">
           {/* RCC Work Section */}
-          <div className="bg-card/10 backdrop-blur-sm border border-border/20 p-8 lg:p-12 flex flex-col justify-center">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit">
+          <div className="bg-card/10 backdrop-blur-sm border border-border/20 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
               STRUCTURAL EXCELLENCE
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-background mb-4">
@@ -43,8 +43,8 @@ const HeroSection = () => {
           </div>
 
           {/* RMC Plant Section */}
-          <div className="bg-card/10 backdrop-blur-sm border border-border/20 p-8 lg:p-12 flex flex-col justify-center">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit">
+          <div className="bg-card/10 backdrop-blur-sm border border-border/20 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
               CONCRETE SOLUTIONS
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-background mb-4">
@@ -67,7 +67,7 @@ const HeroSection = () => {
         </div>
 
         {/* Contact Bar */}
-        <div className="mt-8 bg-primary text-primary-foreground p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 bg-primary text-primary-foreground p-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg">
           <div className="text-center sm:text-left">
             <p className="text-sm opacity-80">Need a quote for your project?</p>
             <p className="font-semibold">Contact us today for a free consultation</p>

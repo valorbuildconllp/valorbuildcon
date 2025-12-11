@@ -34,8 +34,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@valorbuildcom.com",
-      link: "mailto:info@valorbuildcom.com",
+      content: "info@valorbuildcon.com",
+      link: "mailto:info@valorbuildcon.com",
     },
     {
       icon: MapPin,
@@ -55,7 +55,7 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container">
         <div className="text-center mb-12">
-          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
+          <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             GET IN TOUCH
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -74,9 +74,9 @@ const ContactSection = () => {
               <a
                 key={index}
                 href={item.link}
-                className="flex items-start gap-4 p-4 bg-card border border-border hover:border-primary transition-colors"
+                className="flex items-start gap-4 p-4 bg-card border border-border hover:border-primary transition-colors rounded-lg"
               >
-                <div className="bg-primary/10 p-3">
+                <div className="bg-primary/10 p-3 rounded-md">
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -88,7 +88,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 bg-card border border-border p-8">
+          <div className="lg:col-span-2 bg-card border border-border p-8 rounded-lg">
             <h3 className="text-xl font-semibold text-foreground mb-6">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -166,7 +166,7 @@ const ContactSection = () => {
         </div>
 
         {/* Map Placeholder */}
-        <div className="mt-12 bg-muted h-[400px] flex items-center justify-center border border-border">
+        <div className="mt-12 bg-muted h-[400px] flex items-center justify-center border border-border rounded-lg">
           <div className="text-center">
             <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
             <p className="text-muted-foreground">

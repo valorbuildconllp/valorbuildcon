@@ -23,10 +23,10 @@ const AboutSection = () => {
           <div className="relative">
             <img 
               src={teamImage} 
-              alt="Valor Buildcom team at construction site" 
-              className="w-full h-[400px] lg:h-[500px] object-cover"
+              alt="Valor Buildcon team at construction site" 
+              className="w-full h-[400px] lg:h-[500px] object-cover rounded-lg"
             />
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 hidden md:block">
+            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 hidden md:block rounded-lg">
               <div className="text-4xl font-bold">15+</div>
               <div className="text-sm opacity-80">Years of Excellence</div>
             </div>
@@ -34,14 +34,14 @@ const AboutSection = () => {
 
           {/* Content Side */}
           <div>
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4">
-              ABOUT VALOR BUILDCOM
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
+              ABOUT VALOR BUILDCON
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Building India's Infrastructure With Expertise & Trust
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Valor Buildcom LLP is a leading construction company with over 15 years of 
+              Valor Buildcon LLP is a leading construction company with over 15 years of 
               experience in delivering high-quality RCC structural work and Ready Mix 
               Concrete solutions. We have successfully completed more than 500 projects 
               across residential, commercial, and industrial sectors.
@@ -66,7 +66,7 @@ const AboutSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-card border border-border p-6 text-center">
+            <div key={stat.label} className="bg-card border border-border p-6 text-center rounded-lg">
               <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
@@ -76,7 +76,7 @@ const AboutSection = () => {
         {/* Mission, Vision, Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {values.map((item) => (
-            <div key={item.title} className="bg-card border border-border p-8">
+            <div key={item.title} className="bg-card border border-border p-8 rounded-lg">
               <item.icon className="h-10 w-10 text-secondary mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
               <p className="text-muted-foreground">{item.description}</p>
