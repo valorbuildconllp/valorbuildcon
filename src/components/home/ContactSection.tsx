@@ -52,9 +52,14 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section
+      id="contact"
+      className="py-20 bg-background"
+      data-animate="fade-up"
+      data-animate-duration="0.9"
+    >
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             GET IN TOUCH
           </div>
@@ -72,9 +77,11 @@ const ContactSection = () => {
           <div className="space-y-6">
             {contactInfo.map((item, index) => (
               <a
-                key={index}
+                key={item.title}
                 href={item.link}
                 className="flex items-start gap-4 p-4 bg-card border border-border hover:border-primary transition-colors rounded-lg"
+                data-animate="fade-up"
+                data-animate-delay={`${0.2 + index * 0.05}`}
               >
                 <div className="bg-primary/10 p-3 rounded-md">
                   <item.icon className="h-6 w-6 text-primary" />
@@ -88,7 +95,11 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 bg-card border border-border p-8 rounded-lg">
+          <div
+            className="lg:col-span-2 bg-card border border-border p-8 rounded-lg"
+            data-animate="fade-left"
+            data-animate-delay="0.25"
+          >
             <h3 className="text-xl font-semibold text-foreground mb-6">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -166,7 +177,11 @@ const ContactSection = () => {
         </div>
 
         {/* Google Map */}
-        <div className="mt-12 overflow-hidden rounded-lg border border-border">
+        <div
+          className="mt-12 overflow-hidden rounded-lg border border-border"
+          data-animate="scale"
+          data-animate-delay="0.35"
+        >
           <iframe
             src="https://www.google.com/maps?q=18.619755,73.730238&z=17&output=embed"
             width="100%"
