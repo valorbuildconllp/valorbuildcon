@@ -93,7 +93,7 @@ const CivilWorkPage = () => {
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl" data-animate="fade-up" data-animate-duration="1" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CIVIL WORKS & INFRASTRUCTURE
             </div>
@@ -117,7 +117,7 @@ const CivilWorkPage = () => {
       {/* Services Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CIVIL SERVICES
             </div>
@@ -129,9 +129,19 @@ const CivilWorkPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-stagger="0.08"
+            data-animate-targets="[data-service-card]"
+          >
             {services.map((service, index) => (
-              <div key={index} className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg"
+                data-service-card
+              >
                 <service.icon className="h-10 w-10 text-secondary mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
@@ -144,7 +154,7 @@ const CivilWorkPage = () => {
       {/* Projects Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PROJECT SHOWCASE
             </div>
@@ -153,9 +163,19 @@ const CivilWorkPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-stagger="0.1"
+            data-animate-targets="[data-project-card]"
+          >
             {projects.map((project, index) => (
-              <div key={index} className="bg-card border border-border overflow-hidden group rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border overflow-hidden group rounded-lg"
+                data-project-card
+              >
                 <div className="relative h-64 overflow-hidden">
                   <img 
                     src={project.image} 
@@ -181,7 +201,7 @@ const CivilWorkPage = () => {
       {/* How We Work Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               DELIVERY APPROACH
             </div>
@@ -190,9 +210,15 @@ const CivilWorkPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-process-card]"
+            data-animate-stagger="0.08"
+          >
             {howWeWork.map((item, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative" data-process-card>
                 <div className="bg-card border border-border p-6 h-full rounded-lg">
                   <div className="text-4xl font-bold text-secondary/30 mb-4">{item.step}</div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
@@ -211,7 +237,7 @@ const CivilWorkPage = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div data-animate="fade-right" data-animate-delay="0.1">
               <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
                 SAFETY & QUALITY
               </div>
@@ -230,7 +256,7 @@ const CivilWorkPage = () => {
                 ))}
               </div>
             </div>
-            <div>
+            <div data-animate="fade-left" data-animate-delay="0.2">
               <img src={teamImage} alt="Safety measures" className="w-full h-[400px] object-cover rounded-lg" />
             </div>
           </div>
@@ -240,7 +266,7 @@ const CivilWorkPage = () => {
       {/* Assets Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CAPACITY & REACH
             </div>
@@ -249,9 +275,19 @@ const CivilWorkPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-asset-card]"
+            data-animate-stagger="0.06"
+          >
             {assets.map((asset, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 text-center rounded-lg"
+                data-asset-card
+              >
                 <div className="text-3xl font-bold text-primary mb-2">{asset.count}</div>
                 <div className="text-sm text-muted-foreground">{asset.name}</div>
               </div>
@@ -264,7 +300,7 @@ const CivilWorkPage = () => {
       <section className="py-20 bg-muted/30">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
+            <div className="relative" data-animate="fade-right" data-animate-delay="0.1">
               <div className="bg-muted h-[400px] w-full flex items-center justify-center rounded-lg">
                 <div className="text-center">
                   <Users className="h-20 w-20 text-muted-foreground mx-auto mb-4" />
@@ -272,7 +308,7 @@ const CivilWorkPage = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div data-animate="fade-left" data-animate-delay="0.2">
               <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 LEADERSHIP
               </div>
@@ -292,7 +328,12 @@ const CivilWorkPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary rounded-lg mx-4 mb-4">
+      <section
+        className="py-16 bg-secondary rounded-lg mx-4 mb-4"
+        data-animate="scale"
+        data-animate-duration="1"
+        data-animate-delay="0.15"
+      >
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
