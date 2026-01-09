@@ -31,7 +31,12 @@ const pillars = [
 const About = () => {
   return (
     <Layout>
-      <section className="bg-muted/20 py-16 border-b border-border">
+      <section
+        className="bg-muted/20 py-16 border-b border-border"
+        data-animate="fade-up"
+        data-animate-duration="1"
+        data-animate-delay="0.1"
+      >
         <div className="container text-center max-w-3xl mx-auto space-y-6">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
             OUR STORY
@@ -47,9 +52,19 @@ const About = () => {
         </div>
       </section>
 
-      <section className="container py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section
+        className="container py-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+        data-animate="fade-up"
+        data-animate-delay="0.2"
+        data-animate-stagger="0.12"
+        data-animate-targets="[data-pillar-card]"
+      >
         {pillars.map(({ name, title, focus, description, icon: Icon }) => (
-          <div key={name} className="bg-card border border-border rounded-2xl p-8 flex flex-col gap-4 shadow-sm">
+          <div
+            key={name}
+            className="bg-card border border-border rounded-2xl p-8 flex flex-col gap-4 shadow-sm"
+            data-pillar-card
+          >
             <div className="h-14 w-14 rounded-full bg-primary/10 text-primary flex items-center justify-center">
               <Icon className="h-7 w-7" />
             </div>
@@ -63,7 +78,7 @@ const About = () => {
         ))}
       </section>
 
-      <section className="container pb-16">
+      <section className="container pb-16" data-animate="scale" data-animate-duration="1">
         <div className="bg-primary text-primary-foreground rounded-3xl p-10 md:p-14 flex flex-col gap-6">
           <h3 className="text-3xl font-semibold">Building Tomorrow's Landmarks</h3>
           <p className="text-primary-foreground/90 text-lg">
@@ -73,9 +88,9 @@ const About = () => {
         </div>
       </section>
 
-      <section className="container pb-20">
+      <section className="container pb-20" data-animate="fade-up" data-animate-delay="0.15">
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-8 items-center">
-          <div className="space-y-5">
+          <div className="space-y-5" data-animate="fade-right" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
               OUR LOCATION
             </div>
@@ -90,7 +105,11 @@ const About = () => {
               <p>Hinjawadi Phase 2, Pune 411057</p>
             </div>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-lg border border-border min-h-[320px]">
+          <div
+            className="rounded-3xl overflow-hidden shadow-lg border border-border min-h-[320px]"
+            data-animate="fade-left"
+            data-animate-delay="0.2"
+          >
             <iframe
               title="Valor Buildcon HQ Map"
               src="https://www.google.com/maps?q=18.619755,73.730238&z=17&output=embed"
