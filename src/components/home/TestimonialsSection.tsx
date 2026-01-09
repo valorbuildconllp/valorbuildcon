@@ -41,9 +41,13 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section
+      className="py-20 bg-muted/30"
+      data-animate="fade-up"
+      data-animate-duration="0.9"
+    >
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             TRUSTED PARTNERS
           </div>
@@ -57,8 +61,13 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {partners.map((partner) => (
-            <div key={partner.name} className="bg-card border border-border p-8 rounded-lg flex flex-col gap-4">
+          {partners.map((partner, index) => (
+            <div
+              key={partner.name}
+              className="bg-card border border-border p-8 rounded-lg flex flex-col gap-4"
+              data-animate="fade-up"
+              data-animate-delay={`${0.2 + index * 0.06}`}
+            >
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center">
                   <Building2 className="h-6 w-6" />
