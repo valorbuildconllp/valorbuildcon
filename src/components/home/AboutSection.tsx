@@ -16,11 +16,16 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section
+      id="about"
+      className="py-20 bg-background"
+      data-animate="fade-up"
+      data-animate-duration="0.9"
+    >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
-          <div className="relative">
+          <div className="relative" data-animate="fade-right" data-animate-delay="0.1">
             <img 
               src={teamImage} 
               alt="Valor Buildcon team at construction site" 
@@ -33,7 +38,7 @@ const AboutSection = () => {
           </div>
 
           {/* Content Side */}
-          <div>
+          <div data-animate="fade-left" data-animate-delay="0.15">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               ABOUT VALOR BUILDCON
             </div>
@@ -65,8 +70,13 @@ const AboutSection = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-          {stats.map((stat) => (
-            <div key={stat.label} className="bg-card border border-border p-6 text-center rounded-lg">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className="bg-card border border-border p-6 text-center rounded-lg"
+              data-animate="fade-up"
+              data-animate-delay={`${0.2 + index * 0.05}`}
+            >
               <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
@@ -75,8 +85,13 @@ const AboutSection = () => {
 
         {/* Mission, Vision, Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          {values.map((item) => (
-            <div key={item.title} className="bg-card border border-border p-8 rounded-lg">
+          {values.map((item, index) => (
+            <div
+              key={item.title}
+              className="bg-card border border-border p-8 rounded-lg"
+              data-animate="fade-up"
+              data-animate-delay={`${0.35 + index * 0.08}`}
+            >
               <item.icon className="h-10 w-10 text-secondary mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
               <p className="text-muted-foreground">{item.description}</p>
