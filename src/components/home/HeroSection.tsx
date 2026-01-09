@@ -5,7 +5,12 @@ import heroImage from "@/assets/hero-construction.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center">
+    <section
+      className="relative min-h-[90vh] flex items-center"
+      data-animate="fade-up"
+      data-animate-duration="1"
+      data-animate-once="true"
+    >
       {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -26,7 +31,11 @@ const HeroSection = () => {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4">
           {/* Civil Work Section */}
-          <div className="bg-card/20 border border-border/30 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
+          <div
+            className="bg-card/20 border border-border/30 p-8 lg:p-12 flex flex-col justify-center rounded-lg"
+            data-animate="fade-up"
+            data-animate-delay="0.1"
+          >
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
               STRUCTURAL EXCELLENCE
             </div>
@@ -49,7 +58,11 @@ const HeroSection = () => {
           </div>
 
           {/* RMC Plant Section */}
-          <div className="bg-card/20 border border-border/30 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
+          <div
+            className="bg-card/20 border border-border/30 p-8 lg:p-12 flex flex-col justify-center rounded-lg"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+          >
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
               CONCRETE SOLUTIONS
             </div>
@@ -73,7 +86,11 @@ const HeroSection = () => {
         </div>
 
         {/* Contact Bar */}
-        <div className="mt-8 bg-primary text-primary-foreground p-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg">
+        <div
+          className="mt-8 bg-primary text-primary-foreground p-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg"
+          data-animate="fade-up"
+          data-animate-delay="0.35"
+        >
           <div className="text-center sm:text-left">
             <p className="text-sm opacity-80">Need a quote for your project?</p>
             <p className="font-semibold">Contact us today for a free consultation</p>
