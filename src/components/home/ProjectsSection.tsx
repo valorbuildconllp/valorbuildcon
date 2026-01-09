@@ -32,9 +32,14 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section
+      id="projects"
+      className="py-20 bg-background"
+      data-animate="fade-up"
+      data-animate-duration="0.9"
+    >
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR PORTFOLIO
           </div>
@@ -50,8 +55,10 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
-              key={index} 
+              key={project.title}
               className="bg-card border border-border overflow-hidden group rounded-lg"
+              data-animate="fade-up"
+              data-animate-delay={`${0.15 + index * 0.08}`}
             >
               <div className="relative h-64 overflow-hidden">
                 <img 
