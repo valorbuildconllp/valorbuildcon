@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-2">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link to="/" className="opacity-80 hover:opacity-100 transition-opacity">Home</Link>
@@ -47,22 +47,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Our Services</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="opacity-80">RCC Structural Work</li>
-              <li className="opacity-80">Ready Mix Concrete Supply</li>
-              <li className="opacity-80">Foundation Work</li>
-              <li className="opacity-80">Concrete Mix Design</li>
-              <li className="opacity-80">Quality Testing Lab</li>
-              <li className="opacity-80">Bulk Concrete Supply</li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-6">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 mt-0.5" />
@@ -93,7 +80,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-primary-foreground/20">
-        <div className="container py-6">
+        <div className="container py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <p className="opacity-80">
               © {new Date().getFullYear()} Valor Buildcon LLP. All Rights Reserved.
