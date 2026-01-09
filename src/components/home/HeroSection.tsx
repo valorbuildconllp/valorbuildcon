@@ -6,26 +6,32 @@ import heroImage from "@/assets/hero-construction.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Construction site aerial view" 
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
           className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/90" />
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-hidden="true"
+          poster={heroImage}
+        >
+          <source src="/valor%20demo.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/60" />
       </div>
 
       {/* Content */}
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4">
-          {/* RCC Work Section */}
-          <div className="bg-card/10 backdrop-blur-sm border border-border/20 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
+          {/* Civil Work Section */}
+          <div className="bg-card/20 border border-border/30 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
               STRUCTURAL EXCELLENCE
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-background mb-4">
-              RCC Work
+              Civil Work
             </h2>
             <p className="text-background/80 text-lg mb-6 leading-relaxed">
               Expert Reinforced Cement Concrete structural work for residential, 
@@ -43,7 +49,7 @@ const HeroSection = () => {
           </div>
 
           {/* RMC Plant Section */}
-          <div className="bg-card/10 backdrop-blur-sm border border-border/20 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
+          <div className="bg-card/20 border border-border/30 p-8 lg:p-12 flex flex-col justify-center rounded-lg">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
               CONCRETE SOLUTIONS
             </div>
