@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import valorLogo from "@/assets/valor-logo.svg";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -50,10 +51,13 @@ const Header = () => {
 
       <div className="container py-4">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="bg-primary text-primary-foreground font-bold text-xl px-3 py-2">
-              VALOR
-            </div>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src={valorLogo}
+              alt="Valor Buildcon LLP logo"
+              className="h-12 w-auto drop-shadow-sm"
+              loading="lazy"
+            />
             <div className="hidden sm:block">
               <div className="font-semibold text-foreground">BUILDCON LLP</div>
               <div className="text-xs text-muted-foreground">Construction Excellence</div>
