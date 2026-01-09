@@ -63,7 +63,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navItems.map(item => <Link key={item.path} to={item.path} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(item.path) ? "text-primary" : "text-muted-foreground")}>
+            {navItems.map(item => <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary", isActive(item.path) ? "text-primary" : "text-muted-foreground")}>
                 {item.label}
               </Link>)}
           </div>
@@ -77,7 +77,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && <div className="lg:hidden py-4 border-t border-border mt-4">
             <div className="flex flex-col gap-4">
-              {navItems.map(item => <Link key={item.path} to={item.path} className={cn("text-sm font-medium transition-colors hover:text-primary py-2", isActive(item.path) ? "text-primary" : "text-muted-foreground")} onClick={() => setIsMenuOpen(false)}>
+              {navItems.map(item => <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary py-2", isActive(item.path) ? "text-primary" : "text-muted-foreground")} onClick={() => setIsMenuOpen(false)}>
                   {item.label}
                 </Link>)}
             </div>
