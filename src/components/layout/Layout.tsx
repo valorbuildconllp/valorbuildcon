@@ -14,6 +14,24 @@ const Layout = ({ children }: LayoutProps) => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (!location.hash) return;
+    const targetId = location.hash.replace("#", "");
+    if (!targetId) return;
+
+    const element = document.getElementById(targetId);
+    if (!element) return;
+
+    const headerOffset = window.innerWidth < 768 ? 100 : 140;
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition > 0 ? offsetPosition : 0,
+      behavior: "smooth",
+    });
+  }, [location.hash, location.pathname]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
