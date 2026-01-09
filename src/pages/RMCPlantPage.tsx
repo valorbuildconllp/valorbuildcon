@@ -81,7 +81,7 @@ const RMCPlantPage = () => {
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl" data-animate="fade-up" data-animate-duration="1" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               READY MIX CONCRETE
             </div>
@@ -105,7 +105,7 @@ const RMCPlantPage = () => {
       {/* Plant Info Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT INFORMATION
             </div>
@@ -118,9 +118,19 @@ const RMCPlantPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-plant-card]"
+            data-animate-stagger="0.06"
+          >
             {plantInfo.map((info, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 text-center rounded-lg"
+                data-plant-card
+              >
                 <div className="text-2xl font-bold text-primary mb-2">{info.value}</div>
                 <div className="text-sm text-muted-foreground">{info.label}</div>
               </div>
@@ -132,7 +142,7 @@ const RMCPlantPage = () => {
       {/* Assets Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR ASSETS
             </div>
@@ -141,9 +151,19 @@ const RMCPlantPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-rmc-asset]"
+            data-animate-stagger="0.08"
+          >
             {assets.map((asset, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 text-center rounded-lg"
+                data-rmc-asset
+              >
                 <asset.icon className="h-12 w-12 text-secondary mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">{asset.name}</h3>
                 <p className="text-sm text-muted-foreground">{asset.description}</p>
@@ -156,7 +176,7 @@ const RMCPlantPage = () => {
       {/* Mix Design Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CONCRETE GRADES
             </div>
@@ -169,9 +189,19 @@ const RMCPlantPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-grade-card]"
+            data-animate-stagger="0.05"
+          >
             {concreteGrades.map((item, index) => (
-              <div key={index} className="bg-card border border-border p-6 rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 rounded-lg"
+                data-grade-card
+              >
                 <div className="text-2xl font-bold text-primary mb-2">{item.grade}</div>
                 <div className="text-sm text-muted-foreground">{item.application}</div>
               </div>
@@ -184,7 +214,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div data-animate="fade-right" data-animate-delay="0.1">
               <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
                 QUALITY ASSURANCE
               </div>
@@ -205,7 +235,7 @@ const RMCPlantPage = () => {
                 ))}
               </div>
             </div>
-            <div>
+            <div data-animate="fade-left" data-animate-delay="0.2">
               <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[400px] object-cover rounded-lg" />
             </div>
           </div>
@@ -215,7 +245,7 @@ const RMCPlantPage = () => {
       {/* Supply to Companies Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR CLIENTS
             </div>
@@ -228,9 +258,19 @@ const RMCPlantPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-client-card]"
+            data-animate-stagger="0.06"
+          >
             {clients.map((client, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center flex items-center justify-center h-24 rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 text-center flex items-center justify-center h-24 rounded-lg"
+                data-client-card
+              >
                 <span className="font-medium text-foreground">{client}</span>
               </div>
             ))}
@@ -241,7 +281,7 @@ const RMCPlantPage = () => {
       {/* Management Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               LEADERSHIP
             </div>
@@ -250,9 +290,19 @@ const RMCPlantPage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-leader-card]"
+            data-animate-stagger="0.08"
+          >
             {managementTeam.map((member, index) => (
-              <div key={index} className="bg-card border border-border p-6 text-center rounded-lg">
+              <div
+                key={index}
+                className="bg-card border border-border p-6 text-center rounded-lg"
+                data-leader-card
+              >
                 <div className="w-20 h-20 bg-muted mx-auto mb-4 flex items-center justify-center rounded-full">
                   <Users className="h-10 w-10 text-muted-foreground" />
                 </div>
@@ -269,7 +319,7 @@ const RMCPlantPage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
+            <div data-animate="fade-right" data-animate-delay="0.1">
               <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 LOCATION
               </div>
@@ -287,7 +337,7 @@ const RMCPlantPage = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div data-animate="fade-left" data-animate-delay="0.2">
               <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 DELIVERY AREA
               </div>
@@ -326,7 +376,12 @@ const RMCPlantPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary rounded-lg mx-4 mb-4">
+      <section
+        className="py-16 bg-secondary rounded-lg mx-4 mb-4"
+        data-animate="scale"
+        data-animate-duration="1"
+        data-animate-delay="0.15"
+      >
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
