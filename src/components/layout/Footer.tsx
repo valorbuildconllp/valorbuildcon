@@ -6,15 +6,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="bg-primary-foreground text-primary font-bold text-xl px-3 py-2">
-                VALOR
+            <div className="flex items-center gap-3 mb-6">
+                <img src="/valor_logo.png" alt="Valor logo" className="h-10 w-auto object-contain" />
+                <div>
+                  <div className="font-semibold text-sky-500 ">VALOR BUILDCON LLP</div>
+                  <div className="text-xs opacity-80">Construction Excellence</div>
+                </div>
               </div>
-              <div>
-                <div className="font-semibold">BUILDCON LLP</div>
-                <div className="text-xs opacity-80">Construction Excellence</div>
-              </div>
-            </div>
             <p className="text-sm opacity-80 leading-relaxed">
               A trusted name in construction industry, specializing in RCC structural work 
               and Ready Mix Concrete solutions. Building India's infrastructure with 
