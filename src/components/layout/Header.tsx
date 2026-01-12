@@ -92,14 +92,14 @@ const Header = () => {
 
       <div className="container py-7">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-1">
             <img
               src="/valor_logo.png"
               alt="Valor Buildcon logo"
               className="h-12 w-auto object-contain"
             />
             <div className="hidden sm:block">
-              <div className="font-semibold text-foreground">Valor Buildcon LLP</div>
+              <div className="font-semibold text-sky-500">Valor Buildcon LLP</div>
               <div className="text-xs text-muted-foreground">Construction Excellence</div>
             </div>
           </Link>
