@@ -101,8 +101,7 @@ const About = () => {
             </p>
             <div className="text-muted-foreground">
               <p className="font-semibold text-foreground">Valor Buildcon LLP</p>
-              <p>Survey 85/5, Near Marunji Chowk</p>
-              <p>Hinjawadi Phase 2, Pune 411057</p>
+              <p>JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033</p>
             </div>
           </div>
           <div
