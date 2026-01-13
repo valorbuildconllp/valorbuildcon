@@ -3,6 +3,11 @@ import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
 
+const contactNumbers = [
+  { label: "+91 88558 60707", href: "tel:+918855860707" },
+  { label: "+91 77450 03646", href: "tel:+917745003646" },
+];
+
 const HeroSection = () => {
   return (
     <section
@@ -99,12 +104,22 @@ const HeroSection = () => {
             <p className="text-sm sm:text-base opacity-80">Need a quote for your project?</p>
             <p className="font-semibold text-base sm:text-lg">Contact us today for a free consultation</p>
           </div>
-          <Button asChild variant="contact" size="lg" className="w-full sm:w-auto">
-            <a href="tel:+918855860707" className="w-full text-center">
-              <Phone className="mr-2 h-5 w-5" />
-              +91 88558 60707
-            </a>
-          </Button>
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            {contactNumbers.map((number) => (
+              <Button
+                key={number.href}
+                asChild
+                variant="contact"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
+                <a href={number.href} className="flex w-full items-center justify-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  {number.label}
+                </a>
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
