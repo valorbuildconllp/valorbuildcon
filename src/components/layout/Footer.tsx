@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+
+const phoneNumbers = [
+  { label: "+91 88558 60707", href: "tel:+918855860707" },
+  { label: "+91 77450 03646", href: "tel:+917745003646" },
+];
+
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
       <div className="container py-12">
@@ -55,11 +61,19 @@ const Footer = () => {
                   JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033<br />
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 shrink-0" />
-                <a href="tel:+918855860707" className="opacity-80 hover:opacity-100">
-                  +91 88558 60707
-                </a>
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  {phoneNumbers.map((number) => (
+                    <a
+                      key={number.href}
+                      href={number.href}
+                      className="opacity-80 hover:opacity-100"
+                    >
+                      {number.label}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0" />
