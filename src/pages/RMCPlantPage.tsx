@@ -72,6 +72,21 @@ const RMCPlantPage = () => {
     { name: "Mrs. Priya Mehta", role: "Operations Manager", experience: "10+ Years" },
   ];
 
+  const rmcGalleryImages = [
+    "/images/IMG-20260113-WA0012.jpg",
+    "/images/IMG-20260113-WA0013.jpg",
+    "/images/IMG-20260113-WA0014.jpg",
+    "/images/IMG-20260113-WA0015.jpg",
+    "/images/IMG-20260113-WA0016.jpg",
+    "/images/IMG-20260113-WA0017.jpg",
+    "/images/IMG-20260113-WA0018.jpg",
+    "/images/IMG-20260113-WA0019.jpg",
+    "/images/IMG-20260113-WA0020.jpg",
+    "/images/IMG-20260113-WA0021.jpg",
+    "/images/IMG-20260113-WA0022.jpg",
+    "/images/IMG-20260113-WA0023.jpg",
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -167,6 +182,50 @@ const RMCPlantPage = () => {
                 <asset.icon className="h-12 w-12 text-secondary mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">{asset.name}</h3>
                 <p className="text-sm text-muted-foreground">{asset.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
+              PLANT GALLERY
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Concrete Production On Ground
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Actual pouring, batching, and logistics visuals from the Valor Buildcon RMC operations team.
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-rmc-gallery]"
+            data-animate-stagger="0.05"
+          >
+            {rmcGalleryImages.map((src, index) => (
+              <div
+                key={src}
+                className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                data-rmc-gallery
+              >
+                <img
+                  src={src}
+                  alt={`RMC plant photo ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
+                <div className="absolute bottom-4 left-4 text-xs font-medium text-background bg-foreground/60 px-3 py-1 rounded-full">
+                  {`Batching Snapshot ${String(index + 1).padStart(2, "0")}`}
+                </div>
               </div>
             ))}
           </div>
