@@ -14,9 +14,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import civilWorkImage from "@/assets/rcc-work.jpg";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
 import teamImage from "@/assets/team-work.jpg";
 
 const CivilWorkPage = () => {
@@ -79,9 +76,24 @@ const CivilWorkPage = () => {
   ];
 
   const projects = [
-    { image: project1, title: "Smart City Streetscape", location: "Ahmedabad CBD", area: "12 km corridor" },
-    { image: project2, title: "Industrial Civil Package", location: "Dahej SEZ", area: "1,50,000 sq.ft" },
-    { image: project3, title: "Urban Drainage Upgrade", location: "Vadodara", area: "45 MLD network" },
+    { image: "/images/IMG-20260113-WA0000.jpg", title: "Smart City Streetscape", location: "Ahmedabad CBD", area: "12 km corridor" },
+    { image: "/images/IMG-20260113-WA0001.jpg", title: "Industrial Civil Package", location: "Dahej SEZ", area: "1,50,000 sq.ft" },
+    { image: "/images/IMG-20260113-WA0002.jpg", title: "Urban Drainage Upgrade", location: "Vadodara", area: "45 MLD network" },
+  ];
+
+  const civilGalleryImages = [
+    "/images/IMG-20260113-WA0000.jpg",
+    "/images/IMG-20260113-WA0001.jpg",
+    "/images/IMG-20260113-WA0002.jpg",
+    "/images/IMG-20260113-WA0003.jpg",
+    "/images/IMG-20260113-WA0004.jpg",
+    "/images/IMG-20260113-WA0005.jpg",
+    "/images/IMG-20260113-WA0006.jpg",
+    "/images/IMG-20260113-WA0007.jpg",
+    "/images/IMG-20260113-WA0008.jpg",
+    "/images/IMG-20260113-WA0009.jpg",
+    "/images/IMG-20260113-WA0010.jpg",
+    "/images/IMG-20260113-WA0011.jpg",
   ];
 
   return (
@@ -191,6 +203,50 @@ const CivilWorkPage = () => {
                     <span className="mx-2">•</span>
                     <span>{project.area}</span>
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
+              SITE GALLERY
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Civil Execution In Progress
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Real-time captures from the latest roadwork, drain upgrades, and industrial civil scopes handled by our teams.
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-gallery-card]"
+            data-animate-stagger="0.05"
+          >
+            {civilGalleryImages.map((src, index) => (
+              <div
+                key={src}
+                className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                data-gallery-card
+              >
+                <img
+                  src={src}
+                  alt={`Civil work photo ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
+                <div className="absolute bottom-4 left-4 text-xs font-medium text-background bg-foreground/60 px-3 py-1 rounded-full">
+                  {`Site Capture ${String(index + 1).padStart(2, "0")}`}
                 </div>
               </div>
             ))}
