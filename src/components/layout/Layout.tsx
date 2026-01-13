@@ -8,6 +8,20 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+const FALLBACK_HEADER_HEIGHT = 140;
+
+const getHeaderHeight = () => {
+  if (typeof window === "undefined") return FALLBACK_HEADER_HEIGHT;
+
+  const value = window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue("--header-height")
+    .trim();
+
+  const parsed = Number.parseFloat(value);
+  return Number.isNaN(parsed) ? FALLBACK_HEADER_HEIGHT : parsed;
+};
+
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   useGsapAnimations();
@@ -24,7 +38,7 @@ const Layout = ({ children }: LayoutProps) => {
     const element = document.getElementById(targetId);
     if (!element) return;
 
-    const headerOffset = window.innerWidth < 768 ? 100 : 140;
+    const headerOffset = getHeaderHeight();
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerOffset;
 
@@ -37,7 +51,10 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 pt-[120px] md:pt-[140px] page-transition">
+      <main
+        className="flex-1 page-transition"
+        style={{ paddingTop: "var(--header-height, 140px)" }}
+      >
         {children}
       </main>
       <Footer />
