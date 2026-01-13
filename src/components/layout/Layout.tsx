@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import BackToTopButton from "@/components/ui/back-to-top-button";
 import useGsapAnimations from "@/hooks/use-gsap-animations";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -58,6 +59,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <BackToTopButton />
     </div>
   );
 };
