@@ -1,12 +1,26 @@
 import { CheckCircle, Target, Eye, Award } from "lucide-react";
 import teamImage from "@/assets/team-work.jpg";
 
+const partnerCompanies = [
+  "Legacy Life Spaces",
+  "Millennium Developers",
+  "Kolte Patil Life Republic",
+  "18 Magnitude",
+  "Garve Developers",
+  "Rohit Group",
+  "Rahuldeep Contractor",
+  "Vinode Wakadkar Associates",
+  "Perfect Construction",
+  "Namrata Group",
+  "Sahil Group",
+];
+
 const AboutSection = () => {
   const stats = [
-    { value: "15+", label: "Years Experience" },
-    { value: "500+", label: "Projects Completed" },
-    { value: "50+", label: "Expert Team Members" },
-    { value: "100%", label: "Client Satisfaction" },
+    { value: "NA", label: "ISO Certificate Number" },
+    { value: "7 Years", label: "Hands-on Experience" },
+    { value: "5+", label: "Projects Delivered / Upcoming" },
+    { value: "10+", label: "Trusted Developer Partners" },
   ];
 
   const values = [
@@ -46,10 +60,10 @@ const AboutSection = () => {
               Building India's Infrastructure With Expertise & Trust
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Valor Buildcon LLP is a leading construction company with over 15 years of 
-              experience in delivering high-quality RCC structural work and Ready Mix 
-              Concrete solutions. We have successfully completed more than 500 projects 
-              across residential, commercial, and industrial sectors.
+              Valor Buildcon LLP is a Pune-based construction company with 7 years of on-ground
+              experience delivering high-quality RCC structural work and Ready Mix Concrete
+              solutions. We have delivered 5+ turnkey projects to date with additional scopes
+              currently underway across residential, commercial, and industrial segments.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Our state-of-the-art RMC plant, combined with our skilled workforce and 
@@ -58,7 +72,12 @@ const AboutSection = () => {
             </p>
 
             <div className="space-y-3">
-              {["ISO 9001:2015 Certified Company", "Quality Tested Materials", "On-Time Project Delivery", "Competitive Pricing"].map((item) => (
+              {[
+                "ISO certificate number: NA (awaiting issuance)",
+                "7-year RCC + RMC delivery track across Pune Metropolitan Region",
+                "5+ completed and upcoming scopes with rigorous QA/QC routines",
+                `Trusted by ${partnerCompanies.slice(0, 5).join(", ")}, and more regional developers`,
+              ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-secondary" />
                   <span className="text-foreground">{item}</span>
