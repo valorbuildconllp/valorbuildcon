@@ -5,44 +5,29 @@ import {
   Truck, 
   Beaker, 
   Settings, 
-  Users, 
-  Shield,
   Phone,
-  Building2,
   MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import rmcImage from "@/assets/rmc-plant.jpg";
 import qualityLab from "@/assets/quality-lab.jpg";
-import teamImage from "@/assets/team-work.jpg";
 
 const RMCPlantPage = () => {
   const plantInfo = [
-    { label: "Plant Capacity", value: "60 m³/hr" },
-    { label: "Storage Silos", value: "4 x 100 MT" },
+    { label: "Plant Capacity", value: "70 m³/hr" },
     { label: "Transit Mixers", value: "15+ Units" },
-    { label: "Delivery Radius", value: "50 km" },
+    { label: "Stationary Pumps", value: "4 Units" },
+    { label: "Delivery Radius", value: "30 km" },
     { label: "Operating Hours", value: "24/7" },
-    { label: "Lab Facility", value: "In-house" },
+    { label: "Location", value: "Jambe Goan, Mulshi" },
   ];
 
   const assets = [
-    { icon: Factory, name: "Batching Plant", description: "Fully automated 60 m³/hr capacity plant" },
-    { icon: Truck, name: "Transit Mixers", description: "Fleet of 15+ modern transit mixers" },
-    { icon: Beaker, name: "Testing Lab", description: "NABL certified in-house laboratory" },
-    { icon: Settings, name: "Pumping Equipment", description: "Concrete pumps for high-rise delivery" },
-  ];
-
-  const concreteGrades = [
-    { grade: "M10", application: "PCC, Leveling" },
-    { grade: "M15", application: "Flooring, Footings" },
-    { grade: "M20", application: "Residential RCC Work" },
-    { grade: "M25", application: "Beams, Columns" },
-    { grade: "M30", application: "Commercial Buildings" },
-    { grade: "M35", application: "High-rise Structures" },
-    { grade: "M40", application: "Bridges, Flyovers" },
-    { grade: "M45+", application: "Special Structures" },
+    { icon: Factory, name: "Batching Infrastructure", description: "Twin-shaft batching with AI moisture correction" },
+    { icon: Truck, name: "Transit Mixers", description: "15+ GPS-tracked mixers for synchronized pours" },
+    { icon: Settings, name: "Stationary Pumps", description: "4 high-pressure pumps for podiums & high-rises" },
+    { icon: Beaker, name: "Quality Lab", description: "In-house QA lab for slump, cube, and temperature control" },
   ];
 
   const qualityTests = [
@@ -55,21 +40,29 @@ const RMCPlantPage = () => {
   ];
 
   const clients = [
-    "Adani Group",
-    "L&T Construction",
-    "Shapoorji Pallonji",
-    "Tata Projects",
-    "NCC Limited",
-    "Lodha Group",
-    "Godrej Properties",
-    "GIDC Projects",
+    "Legacy Life Spaces",
+    "Millennium Developers",
+    "Kolte Patil Life Republic",
+    "18 Magnitude",
+    "Garve Developers",
+    "Rohit Group",
+    "Rahuldeep Contractor",
+    "Vinode Wakadkar Associates",
+    "Perfect Construction",
+    "Namrata Group",
+    "Sahil Group",
   ];
 
-  const managementTeam = [
-    { name: "Mr. Vikram Patel", role: "Managing Director", experience: "20+ Years" },
-    { name: "Mr. Suresh Kumar", role: "Plant Manager", experience: "15+ Years" },
-    { name: "Mr. Rahul Sharma", role: "Quality Head", experience: "12+ Years" },
-    { name: "Mrs. Priya Mehta", role: "Operations Manager", experience: "10+ Years" },
+  const rmcLeadership = [
+    { name: "Virendra Anil Kate", role: "Founding Partner", focus: "Oversees overall RMC strategy and client relationships." },
+    { name: "Abhayraje Gangadhar Vinode", role: "Operations Partner", focus: "Leads batching performance, fleet readiness, and QA/QC routines." },
+    { name: "Abhilash Tukaram Kalokhe", role: "Projects Partner", focus: "Manages delivery schedules, billing, and coordination with developer sites." },
+  ];
+
+  const rmcStaff = [
+    { name: "Plant Team Member 01", role: "Plant Supervisor", note: "Name & portrait to be provided", shift: "Day Shift" },
+    { name: "Plant Team Member 02", role: "Dispatch Controller", note: "Awaiting final details", shift: "Night Shift" },
+    { name: "Plant Team Member 03", role: "Maintenance Lead", note: "Client will confirm", shift: "Rotational" },
   ];
 
   const rmcGalleryImages = [
@@ -101,11 +94,11 @@ const RMCPlantPage = () => {
               READY MIX CONCRETE
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-background mb-4">
-              Quality Concrete, Delivered On Time
+              Pune RMC Plant With 70 m³/hr Output
             </h1>
             <p className="text-xl text-background/80 mb-6">
-              State-of-the-art RMC plant delivering consistent quality concrete with 
-              precision mix designs to construction sites across the region.
+              Jambe Goan-based batching facility supplying consistent concrete within a
+              30 km radius backed by disciplined logistics and QA/QC.
             </p>
             <Button asChild size="lg" variant="secondary">
               <a href="tel:+918855860707">
@@ -128,8 +121,8 @@ const RMCPlantPage = () => {
               Our RMC Plant Capacity
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our modern batching plant is equipped with latest technology to produce 
-              high-quality concrete meeting all IS specifications.
+              Our modern batching plant combines real-time moisture correction, fleet tracking, and
+              in-house lab validation to maintain mix integrity on every pour.
             </p>
           </div>
 
@@ -195,7 +188,7 @@ const RMCPlantPage = () => {
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT GALLERY
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Concrete Production On Ground
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -243,28 +236,16 @@ const RMCPlantPage = () => {
               Mix Design Options
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We offer a wide range of concrete grades designed to meet specific 
-              project requirements and structural specifications.
+              Final mix design combinations will be published once the client provides the
+              official matrix. This placeholder ensures the layout is ready for the upcoming data.
             </p>
           </div>
 
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-targets="[data-grade-card]"
-            data-animate-stagger="0.05"
-          >
-            {concreteGrades.map((item, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border p-6 rounded-lg"
-                data-grade-card
-              >
-                <div className="text-2xl font-bold text-primary mb-2">{item.grade}</div>
-                <div className="text-sm text-muted-foreground">{item.application}</div>
-              </div>
-            ))}
+          <div className="bg-card border border-dashed border-border rounded-2xl p-8 text-center" data-animate="fade-up" data-animate-delay="0.25">
+            <p className="text-muted-foreground">
+              Mix design catalogue pending. Share the grade-wise details to replace this panel with
+              the finalized options (M10 to SCC / special mixes).
+            </p>
           </div>
         </div>
       </section>
@@ -312,8 +293,8 @@ const RMCPlantPage = () => {
               Companies We Supply To
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We are proud to be the trusted RMC supplier for leading construction 
-              companies across Gujarat.
+              Proud supply partner to Pune's leading developers and contractors across Hinjawadi,
+              Baner, PCMC, and Mulshi growth corridors.
             </p>
           </div>
 
@@ -350,24 +331,64 @@ const RMCPlantPage = () => {
           </div>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             data-animate="fade-up"
             data-animate-delay="0.2"
             data-animate-targets="[data-leader-card]"
             data-animate-stagger="0.08"
           >
-            {managementTeam.map((member, index) => (
+            {rmcLeadership.map((member) => (
               <div
-                key={index}
-                className="bg-card border border-border p-6 text-center rounded-lg"
+                key={member.name}
+                className="bg-card border border-border p-6 rounded-2xl"
                 data-leader-card
               >
-                <div className="w-20 h-20 bg-muted mx-auto mb-4 flex items-center justify-center rounded-full">
-                  <Users className="h-10 w-10 text-muted-foreground" />
+                <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
+                  <span>Photo placeholder for {member.name}</span>
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
                 <p className="text-sm text-secondary mb-2">{member.role}</p>
-                <p className="text-xs text-muted-foreground">{member.experience} Experience</p>
+                <p className="text-sm text-muted-foreground">{member.focus}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RMC Staff Placeholder Section */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
+              OPERATIONS TEAM
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              RMC Staff (Photos Coming Soon)
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Placeholder cards reserve space for the confirmed team roster. Replace the content below as
+              soon as the official photos and names are shared.
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-staff-card]"
+            data-animate-stagger="0.08"
+          >
+            {rmcStaff.map((staff) => (
+              <div key={staff.name} className="bg-card border border-dashed border-border p-6 rounded-xl" data-staff-card>
+                <div className="aspect-square rounded-lg bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
+                  <span>Photo placeholder</span>
+                </div>
+                <h3 className="font-semibold text-foreground">{staff.name}</h3>
+                <p className="text-sm text-secondary">{staff.role}</p>
+                <div className="mt-3 text-sm text-muted-foreground">
+                  <p>{staff.note}</p>
+                  <p className="font-medium">{staff.shift}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -390,8 +411,8 @@ const RMCPlantPage = () => {
                   <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-muted-foreground">Google Map</p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Industrial Area, Sector 12<br />
-                    Ahmedabad, Gujarat - 380015
+                    Jambe Goan, Tal. Mulshi<br />
+                    Pune, Maharashtra 411033
                   </p>
                 </div>
               </div>
@@ -401,32 +422,32 @@ const RMCPlantPage = () => {
                 DELIVERY AREA
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                Delivery Radius
+                30 km Supply Radius
               </h2>
               <p className="text-muted-foreground mb-6">
-                We deliver ready mix concrete within a 50 km radius of our plant, covering 
-                major areas including Ahmedabad, Gandhinagar, Sanand, and surrounding regions.
+                We deliver ready mix concrete within 30 km of Jambe Goan, covering Hinjawadi, PCMC,
+                Baner, Wakad, Punawale, and neighboring growth pockets.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-secondary" />
-                  <span>Ahmedabad City & Suburbs</span>
+                  <span>Hinjawadi Phases 1-3</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-secondary" />
-                  <span>Gandhinagar</span>
+                  <span>Wakad & Baner</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-secondary" />
-                  <span>Sanand Industrial Area</span>
+                  <span>Ravet & Punawale</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-secondary" />
-                  <span>Bavla & Changodar</span>
+                  <span>PCMC Industrial Belts</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-secondary" />
-                  <span>Naroda & Vatva</span>
+                  <span>Mulshi & Talegaon Corridors</span>
                 </div>
               </div>
             </div>
