@@ -66,18 +66,9 @@ const RMCPlantPage = () => {
   ];
 
   const rmcGalleryImages = [
-    "/images/IMG-20260113-WA0012.jpg",
-    "/images/IMG-20260113-WA0013.jpg",
-    "/images/IMG-20260113-WA0014.jpg",
-    "/images/IMG-20260113-WA0015.jpg",
-    "/images/IMG-20260113-WA0016.jpg",
-    "/images/IMG-20260113-WA0017.jpg",
-    "/images/IMG-20260113-WA0018.jpg",
-    "/images/IMG-20260113-WA0019.jpg",
-    "/images/IMG-20260113-WA0020.jpg",
-    "/images/IMG-20260113-WA0021.jpg",
-    "/images/IMG-20260113-WA0022.jpg",
-    "/images/IMG-20260113-WA0023.jpg",
+    "/images/rmc_work/IMG-20260113-WA0014.jpg",
+    "/images/rmc_work/IMG-20260113-WA0019.jpg",
+    "/images/rmc_work/IMG-20260113-WA0023.jpg",
   ];
 
   return (
