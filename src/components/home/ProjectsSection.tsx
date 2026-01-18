@@ -2,9 +2,10 @@ import { Building2, MapPin, Calendar } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import { useContent } from "@/hooks/use-content";
 
 const ProjectsSection = () => {
-  const projects = [
+  const defaultProjects = [
     {
       image: project1,
       title: "Sunrise Commercial Complex",
@@ -30,6 +31,11 @@ const ProjectsSection = () => {
       area: "2,00,000 sq.ft",
     },
   ];
+
+  const { projects } = useContent<{ projects: typeof defaultProjects }>(
+    "/content/projects.json",
+    { projects: defaultProjects }
+  );
 
   return (
     <section
