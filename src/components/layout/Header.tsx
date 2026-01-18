@@ -138,12 +138,12 @@ const Header = () => {
       </div>
 
       <div className="container py-5 lg:py-7">
-        <nav className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-1">
+        <nav className="flex items-center justify-between gap-3">
+          <Link to="/" className="flex items-center gap-2 min-w-0">
             <img
               src="/valor_logo.png"
               alt="Valor Buildcon logo"
-              className="h-12 w-auto object-contain"
+              className="h-10 w-auto object-contain sm:h-12"
             />
             <div className="hidden sm:block">
               <div className="font-semibold text-sky-500">Valor Buildcon LLP</div>
@@ -193,14 +193,20 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+          <button
+            className="lg:hidden p-2 shrink-0 rounded-md border border-border/60 bg-background/80 backdrop-blur"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </nav>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && <div className="lg:hidden py-4 border-t border-border mt-4">
-            <div className="flex flex-col gap-4">
+        {isMenuOpen && <div id="mobile-nav" className="lg:hidden py-4 border-t border-border mt-4">
+            <div className="flex flex-col gap-4 max-h-[calc(100vh-220px)] overflow-y-auto overscroll-contain pr-1">
               {navItems.map(item => "children" in item ? <div key={item.label} className="flex flex-col gap-2">
                     <button type="button" className="flex items-center justify-between text-base font-semibold text-muted-foreground hover:text-primary transition-colors" onClick={() => setOpenMobileDropdown(openMobileDropdown === item.label ? null : item.label)}>
                       <span>{item.label}</span>
