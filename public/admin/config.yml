@@ -1,0 +1,107 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "home-projects"
+    label: "Home Projects"
+    files:
+      - file: "public/content/projects.json"
+        label: "Featured Projects"
+        name: "projects"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Type", name: "type", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Area", name: "area", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+
+  - name: "rcc"
+    label: "RCC Work Page"
+    files:
+      - file: "public/content/rcc.json"
+        label: "RCC Content"
+        name: "rcc"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+          - label: "Gallery Images"
+            name: "galleryImages"
+            widget: "list"
+            field: { label: "Image", name: "image", widget: "image" }
+          - label: "Leadership & Staff"
+            name: "team"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Focus", name: "focus", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "rmc"
+    label: "RMC Plant Page"
+    files:
+      - file: "public/content/rmc.json"
+        label: "RMC Content"
+        name: "rmc"
+        fields:
+          - label: "Gallery Images"
+            name: "galleryImages"
+            widget: "list"
+            field: { label: "Image", name: "image", widget: "image" }
+          - label: "Management Team"
+            name: "leadership"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Focus", name: "focus", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+          - label: "Operations Staff"
+            name: "staff"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Shift", name: "shift", widget: "string" }
+              - { label: "Note", name: "note", widget: "text", required: false }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "public/content/about.json"
+        label: "Leadership Pillars"
+        name: "about"
+        fields:
+          - label: "Pillars"
+            name: "pillars"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Focus", name: "focus", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
