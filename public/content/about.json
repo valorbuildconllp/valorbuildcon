@@ -1,0 +1,22 @@
+{
+  "pillars": [
+    {
+      "name": "Virendra Anil Kate",
+      "title": "Founding Partner",
+      "focus": "Vision & Leadership",
+      "description": "Guides Valor Buildcon's long-term strategy, forging partnerships and cultivating a culture of craftsmanship across every site we touch."
+    },
+    {
+      "name": "Abhayraje Gangadhar Vinode",
+      "title": "Operations Partner",
+      "focus": "Execution & Delivery",
+      "description": "Oversees civil execution, quality labs, and on-ground teams to ensure structures are delivered safely, precisely, and ahead of schedule."
+    },
+    {
+      "name": "Abhilash Tukaram Kalokhe",
+      "title": "Projects Partner",
+      "focus": "Client Success",
+      "description": "Leads client engagements and translates complex design intents into actionable construction programs across RCC and RMC projects."
+    }
+  ]
+}
