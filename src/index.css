@@ -152,7 +152,7 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
 
   * {
     scrollbar-width: auto;
-    scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+    scrollbar-color: hsl(var(--primary)) transparent;
   }
 
   *::-webkit-scrollbar {
@@ -161,7 +161,7 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
   }
 
   *::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
+    background: transparent;
   }
 
 
