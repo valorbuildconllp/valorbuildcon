@@ -70,6 +70,11 @@ const RMCPlantPage = () => {
     "/images/rmc_work/IMG-20260113-WA0014.jpg",
     "/images/rmc_work/IMG-20260113-WA0019.jpg",
     "/images/rmc_work/IMG-20260113-WA0023.jpg",
+    "/images/rmc_work/WhatsApp Image 2026-01-18 at 9.39.39 AM (3).jpeg",
+    "/images/rmc_work/WhatsApp Image 2026-01-18 at 9.39.39 AM (4).jpeg",
+    "/images/rmc_work/WhatsApp Image 2026-01-18 at 9.39.39 AM (5).jpeg",
+    "/images/rmc_work/WhatsApp Image 2026-01-18 at 9.39.39 AM.jpeg",
+    "/images/rmc_work/WhatsApp Image 2026-01-18 at 9.40.58 AM.jpeg",
   ];
 
   const { galleryImages, leadership, staff } = useContent<{
