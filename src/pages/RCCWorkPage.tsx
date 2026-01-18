@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import civilWorkImage from "@/assets/rcc-work.jpg";
 import teamImage from "@/assets/team-work.jpg";
+import { useContent } from "@/hooks/use-content";
 
 const CivilWorkPage = () => {
   const services = [
@@ -126,6 +127,16 @@ const CivilWorkPage = () => {
     },
   ];
 
+  const { projects: cmsProjects, galleryImages, team } = useContent<{
+    projects: typeof projects;
+    galleryImages: typeof civilGalleryImages;
+    team: Array<typeof civilTeam[number] & { photo?: string }>;
+  }>("/content/rcc.json", {
+    projects,
+    galleryImages: civilGalleryImages,
+    team: civilTeam,
+  });
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -212,7 +223,7 @@ const CivilWorkPage = () => {
             data-animate-stagger="0.1"
             data-animate-targets="[data-project-card]"
           >
-            {projects.map((project, index) => (
+            {cmsProjects.map((project, index) => (
               <div
                 key={index}
                 className="bg-card border border-border overflow-hidden group rounded-lg"
@@ -263,7 +274,7 @@ const CivilWorkPage = () => {
             data-animate-targets="[data-gallery-card]"
             data-animate-stagger="0.05"
           >
-            {civilGalleryImages.map((src, index) => (
+            {galleryImages.map((src, index) => (
               <div
                 key={src}
                 className="relative h-64 overflow-hidden rounded-lg border border-border group"
@@ -405,11 +416,20 @@ const CivilWorkPage = () => {
             data-animate-targets="[data-civil-team]"
             data-animate-stagger="0.08"
           >
-            {civilTeam.map((member) => (
+            {team.map((member) => (
               <div key={member.name} className="bg-card border border-border rounded-2xl p-8" data-civil-team>
-                <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
-                  <span>Photo placeholder for {member.name}</span>
-                </div>
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="aspect-[4/3] w-full rounded-xl object-cover mb-6"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
+                    <span>Photo placeholder for {member.name}</span>
+                  </div>
+                )}
                 <h3 className="text-2xl font-semibold text-foreground">{member.name}</h3>
                 <p className="text-primary font-medium mb-3">{member.role}</p>
                 <p className="text-muted-foreground leading-relaxed">{member.focus}</p>
