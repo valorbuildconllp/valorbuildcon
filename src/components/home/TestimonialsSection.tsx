@@ -1,43 +1,24 @@
-import { Building2, Briefcase } from "lucide-react";
+import { Building2 } from "lucide-react";
+import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
 
 const TestimonialsSection = () => {
-  const partners = [
-    {
-      name: "Larsen & Toubro",
-      sector: "Infrastructure",
-      focus: "High-rise civil works",
-      description: "Delivered structural frames for premium residential towers with accelerated timelines and zero-compromise safety.",
-    },
-    {
-      name: "Adani Realty",
-      sector: "Real Estate",
-      focus: "Mixed-use townships",
-      description: "Executed RCC packages and supplied RMC for large-format township amenities across Ahmedabad.",
-    },
-    {
-      name: "Tata Projects",
-      sector: "Industrial",
-      focus: "Industrial foundations",
-      description: "Supported critical infrastructure builds with precision batching and on-site pour management.",
-    },
-    {
-      name: "Godrej Properties",
-      sector: "Residential",
-      focus: "Premium residences",
-      description: "Provided turnkey civil work execution for boutique residential blocks and lifestyle clubs.",
-    },
-    {
-      name: "Shapoorji Pallonji",
-      sector: "Commercial",
-      focus: "Corporate campuses",
-      description: "Managed structural cores and concrete logistics for sustainable office campuses.",
-    },
-    {
-      name: "Hiranandani Communities",
-      sector: "Townships",
-      focus: "Bulk concrete supply",
-      description: "Operated dedicated batching setups to fuel large-scale township infrastructure.",
-    },
+  const partnerNames = [
+    "Larsen & Toubro",
+    "Adani Realty",
+    "Tata Projects",
+    "Godrej Properties",
+    "Shapoorji Pallonji",
+    "Hiranandani Communities",
+    "Kolte Patil Life Republic",
+    "Legacy Life Spaces",
+    "Millennium Developers",
+    "18 Magnitude",
+    "Garve Developers",
+    "Rahuldeep Contractor",
+    "Vinode Wakadkar Associates",
+    "Perfect Construction",
+    "Namrata Group",
+    "Sahil Group",
   ];
 
   return (
@@ -60,33 +41,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {partners.map((partner, index) => (
-            <div
-              key={partner.name}
-              className="bg-card border border-border p-8 rounded-lg flex flex-col gap-4"
-              data-animate="fade-up"
-              data-animate-delay={`${0.2 + index * 0.06}`}
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center">
-                  <Building2 className="h-6 w-6" />
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground text-lg">{partner.name}</div>
-                  <div className="text-sm text-muted-foreground">{partner.sector}</div>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                {partner.description}
-              </p>
-              <div className="flex items-center gap-2 text-sm text-foreground font-medium">
-                <Briefcase className="h-4 w-4 text-primary" />
-                <span>{partner.focus}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <DirectionalMarquee items={partnerNames} direction="left" speed={80} />
       </div>
     </section>
   );
