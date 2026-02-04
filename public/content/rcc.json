@@ -1,22 +1,36 @@
 {
-  "projects": [
+  "civilProjects": [
     {
-      "image": "/images/civil_rcc_work/IMG-20260113-WA0000.jpg",
-      "title": "Life Republic Podium Works",
-      "location": "Hinjawadi, Pune",
-      "company": "Kolte Patil Life Republic"
+      "title": "Legacy Milestone",
+      "location": "Punawale",
+      "scope": "Excavation",
+      "status": "Completed"
     },
     {
-      "image": "/images/civil_rcc_work/IMG-20260113-WA0001.jpg",
-      "title": "Legacy Avenue RCC Shells",
-      "location": "Pimpri-Chinchwad",
-      "company": "Legacy Life Spaces"
+      "title": "Vilas Jawadekar",
+      "location": "Kate Wasti",
+      "scope": "Excavation",
+      "status": "Completed"
     },
     {
-      "image": "/images/civil_rcc_work/IMG-20260113-WA0002.jpg",
-      "title": "Commercial Utility Upgrade",
-      "location": "Baner, Pune",
-      "company": "Millennium Developers"
+      "title": "18 Magnitude",
+      "location": "Punawale",
+      "scope": "Excavation",
+      "status": "Completed"
+    }
+  ],
+  "rccProjects": [
+    {
+      "title": "Poodar School",
+      "location": "Punawale",
+      "scope": "RCC Work",
+      "status": "Completed"
+    },
+    {
+      "title": "DY Patil",
+      "location": "Ravet",
+      "scope": "RCC Work",
+      "status": "Completed"
     }
   ],
   "galleryImages": [
@@ -52,14 +66,19 @@
   ],
   "team": [
     {
-      "name": "Mahesh Chavre",
-      "role": "Civil Delivery Lead",
-      "focus": "Leads RCC execution, crew deployment, and coordination with consultants across all active projects."
+      "name": "Vishwajit Biswas",
+      "role": "Engineer",
+      "focus": "Handles site execution, safety, and day-to-day coordination across civil scopes."
     },
     {
-      "name": "Vishwajit Biswas",
-      "role": "Senior Site Manager",
-      "focus": "Oversees day-to-day site safety, QA/QC logs, and contractor interfaces for township scopes."
+      "name": "Mahesh Chowre",
+      "role": "Engineer",
+      "focus": "Manages RCC activity planning, contractor coordination, and site reporting."
+    },
+    {
+      "name": "Girish Desai",
+      "role": "Technical Head",
+      "focus": "Leads technical approvals, QA/QC standards, and execution methodology across projects."
     }
   ]
 }
