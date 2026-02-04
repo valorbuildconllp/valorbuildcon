@@ -1,25 +1,14 @@
 import { Building2 } from "lucide-react";
 import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
+const marqueeImages = [
+  "/images/marquee_images/18Mag.jpg",
+  "/images/marquee_images/DYPU.jpg",
+  "/images/marquee_images/Legacy.jpg",
+  "/images/marquee_images/Podar.jpg",
+  "/images/marquee_images/Vilas Javdekar.jpg",
+];
 
 const TestimonialsSection = () => {
-  const partnerNames = [
-    "Larsen & Toubro",
-    "Adani Realty",
-    "Tata Projects",
-    "Godrej Properties",
-    "Shapoorji Pallonji",
-    "Hiranandani Communities",
-    "Kolte Patil Life Republic",
-    "Legacy Life Spaces",
-    "Millennium Developers",
-    "18 Magnitude",
-    "Garve Developers",
-    "Rahuldeep Contractor",
-    "Vinode Wakadkar Associates",
-    "Perfect Construction",
-    "Namrata Group",
-    "Sahil Group",
-  ];
 
   return (
     <section
@@ -43,7 +32,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <DirectionalMarquee items={partnerNames} direction="left" speed={80} />
+        <DirectionalMarquee items={marqueeImages} direction="left" speed={30} isImageMarquee />
       </div>
     </section>
   );
