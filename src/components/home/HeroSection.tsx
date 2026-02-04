@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
 
 const contactNumbers = [
-  { label: "+91 88558 60707", href: "tel:+918855860707" },
-  { label: "+91 77450 03646", href: "tel:+917745003646" },
+  { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
 ];
 
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[70vh] md:min-h-[90vh] flex items-center py-16"
+      className="relative min-h-[100vh] flex items-center py-16"
+      style={{marginTop: '-125px', zIndex: 1, position: 'relative'}}
       data-animate="fade-up"
       data-animate-duration="1"
       data-animate-once="true"
@@ -46,10 +46,10 @@ const HeroSection = () => {
             data-animate-delay="0.1"
           >
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
-              STRUCTURAL EXCELLENCE
+              <span className="hero-dark-grey">STRUCTURAL EXCELLENCE</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-background mb-4">
-              Civil Work
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+              <span className="civil-rmc-title">Civil Work</span>
             </h2>
             <p className="text-background/80 text-base sm:text-lg mb-6 leading-relaxed">
               Expert Reinforced Cement Concrete structural work for residential, 
@@ -58,9 +58,9 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild variant="secondary" size="lg">
-                <Link to="/rcc-work">
+                <Link to="/rcc-work" className="maroon-link">
                   Read More
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 maroon-link" />
                 </Link>
               </Button>
             </div>
@@ -73,10 +73,10 @@ const HeroSection = () => {
             data-animate-delay="0.2"
           >
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 w-fit rounded">
-              CONCRETE SOLUTIONS
+              <span className="hero-dark-grey">CONCRETE SOLUTIONS</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-background mb-4">
-              RMC Plant
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+              <span className="civil-rmc-title">RMC Plant</span>
             </h2>
             <p className="text-background/80 text-base sm:text-lg mb-6 leading-relaxed">
               State-of-the-art Ready Mix Concrete plant delivering consistent quality 
@@ -85,9 +85,9 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild variant="secondary" size="lg">
-                <Link to="/rmc-plant">
+                <Link to="/rmc-plant" className="maroon-link">
                   Read More
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 maroon-link" />
                 </Link>
               </Button>
             </div>
