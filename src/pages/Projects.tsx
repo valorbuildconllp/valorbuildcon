@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import ProjectsSection from "@/components/home/ProjectsSection";
 import { Link } from "react-router-dom";
-import { Building2, HardHat, Shield, MapPin } from "lucide-react";
 
 const stats = [
   {
@@ -17,28 +16,7 @@ const stats = [
   {
     value: "14",
     label: "Cities Covered",
-    description: "Pan-Gujarat delivery network with turnkey execution teams on standby.",
-  },
-];
-
-const projectFocus = [
-  {
-    title: "Industrial & Logistics",
-    description:
-      "Heavy-duty floors, high-bay warehouses, and utility corridors engineered for long design life.",
-    icon: Building2,
-  },
-  {
-    title: "Urban Residential",
-    description:
-      "Premium mid-rise and township developments with integrated RCC, finishing, and RMC supply.",
-    icon: Shield,
-  },
-  {
-    title: "Civic & Infrastructure",
-    description:
-      "Bridges, public amenities, and institutional campuses executed with disciplined compliance.",
-    icon: HardHat,
+    description: "Pune & Maharashtra delivery network with turnkey execution teams on standby.",
   },
 ];
 
@@ -62,7 +40,7 @@ const Projects = () => {
           <div className="w-16 h-1 bg-primary rounded mb-4" />
           <p className="text-muted-foreground text-base sm:text-lg max-w-3xl">
             Every Valor Buildcon engagement blends structural precision with site agility. Explore the RCC and RMC
-            programs we have delivered for developers, industries, and public institutions across Gujarat.
+            programs we have delivered for developers, industries, and public institutions across Pune, Maharashtra.
           </p>
         </div>
       </section>
@@ -88,31 +66,6 @@ const Projects = () => {
           ))}
         </div>
 
-        <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
-          data-animate="fade-up"
-          data-animate-delay="0.25"
-          data-animate-targets="[data-focus-card]"
-          data-animate-stagger="0.12"
-        >
-          {projectFocus.map(({ title, description, icon: Icon }) => (
-            <div
-              key={title}
-              className="bg-background border border-border rounded-2xl p-6 flex flex-col gap-4"
-              data-focus-card
-            >
-              <div className="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1">{description}</p>
-              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                <MapPin className="h-4 w-4" />
-                Gujarat & Western India
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
       <ProjectsSection />
