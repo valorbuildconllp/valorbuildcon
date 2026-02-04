@@ -171,8 +171,8 @@ const CivilWorkPage = () => {
     team: civilTeam,
   });
 
-  const rccMaterialImages = galleryImages.slice(0, 8);
-  const civilWorkImages = galleryImages.slice(8);
+  const rccMaterialImages = galleryImages.slice(8);
+  const civilWorkImages = galleryImages.slice(0, 8);
   const leadMember = team.find((member) => member.name === "Girish Desai") ?? team[0];
   const subMembers = team.filter((member) => member.name !== leadMember?.name);
 
