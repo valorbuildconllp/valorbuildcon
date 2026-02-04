@@ -41,17 +41,15 @@ const RMCPlantPage = () => {
   ];
 
   const clients = [
-    "Legacy Life Spaces",
-    "Millennium Developers",
-    "Kolte Patil Life Republic",
+    "Millennium Samruddhi / Amara, Punawale",
+    "Rohit Group, Kate Wasti",
+    "Legacy Infinity Home",
     "18 Magnitude",
-    "Garve Developers",
-    "Rohit Group",
-    "Rahuldeep Contractor",
-    "Vinode Wakadkar Associates",
-    "Perfect Construction",
     "Namrata Group",
-    "Sahil Group",
+    "Rahuldeep Contractor",
+    "Kolte Patil",
+    "Vinode Wakadkar Associates",
+    "Perfect Constructions",
   ];
 
   const rmcLeadership = [
@@ -108,7 +106,7 @@ const RMCPlantPage = () => {
               30 km radius backed by disciplined logistics and QA/QC.
             </p>
             <Button asChild size="lg" variant="secondary">
-              <a href="tel:+918855860707">
+              <a href="tel:+919607140999">
                 <Phone className="mr-2 h-5 w-5" />
                 Order Now
               </a>
@@ -120,14 +118,15 @@ const RMCPlantPage = () => {
       {/* Plant Info Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT INFORMATION
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Our RMC Plant Capacity
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
               Our modern batching plant combines real-time moisture correction, fleet tracking, and
               in-house lab validation to maintain mix integrity on every pour.
             </p>
@@ -155,15 +154,16 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Assets Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR ASSETS
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Equipment & Infrastructure
             </h2>
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
           </div>
 
           <div
@@ -191,14 +191,15 @@ const RMCPlantPage = () => {
       {/* Gallery Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT GALLERY
             </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Concrete Production On Ground
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
               Actual pouring, batching, and logistics visuals from the Valor Buildcon RMC operations team.
             </p>
           </div>
@@ -232,17 +233,55 @@ const RMCPlantPage = () => {
         </div>
       </section>
 
+      {/* RMC Work Section */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
+              RMC WORK
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+              Ongoing Quality Consultancy (DCC Concrete Cons.)
+            </h2>
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
+              Current RMC quality consultancy and supply engagements across Punawale, Kate Wasti, and
+              surrounding growth corridors.
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-client-card]"
+            data-animate-stagger="0.06"
+          >
+            {clients.map((client, index) => (
+              <div
+                key={index}
+                className="bg-card border border-border p-6 text-center flex items-center justify-center h-24 rounded-lg"
+                data-client-card
+              >
+                <span className="font-medium text-foreground">{client}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Mix Design Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CONCRETE GRADES
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Mix Design Options
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
               Final mix design combinations will be published once the client provides the
               official matrix. This placeholder ensures the layout is ready for the upcoming data.
             </p>
@@ -281,6 +320,14 @@ const RMCPlantPage = () => {
                   </div>
                 ))}
               </div>
+              <div className="mt-8 bg-primary-foreground/10 border border-primary-foreground/20 rounded-lg p-5">
+                <p className="text-sm uppercase tracking-wide text-primary-foreground/70 mb-2">
+                  Quality Lab Highlight
+                </p>
+                <p className="opacity-90">
+                  Dedicated QA/QC lab with slump, cube, and temperature testing logs maintained for every pour.
+                </p>
+              </div>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
               <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[400px] object-cover rounded-lg" />
@@ -289,52 +336,17 @@ const RMCPlantPage = () => {
         </div>
       </section>
 
-      {/* Supply to Companies Section */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              OUR CLIENTS
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Companies We Supply To
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Proud supply partner to Pune's leading developers and contractors across Hinjawadi,
-              Baner, PCMC, and Mulshi growth corridors.
-            </p>
-          </div>
-
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-targets="[data-client-card]"
-            data-animate-stagger="0.06"
-          >
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border p-6 text-center flex items-center justify-center h-24 rounded-lg"
-                data-client-card
-              >
-                <span className="font-medium text-foreground">{client}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Management Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               LEADERSHIP
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Our Management Team
             </h2>
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
           </div>
 
           <div
@@ -374,14 +386,15 @@ const RMCPlantPage = () => {
       {/* RMC Staff Placeholder Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OPERATIONS TEAM
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               RMC Staff (Photos Coming Soon)
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
               Placeholder cards reserve space for the confirmed team roster. Replace the content below as
               soon as the official photos and names are shared.
             </p>
@@ -499,7 +512,7 @@ const RMCPlantPage = () => {
             </div>
             <div className="flex gap-4">
               <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-                <a href="tel:+918855860707">
+                <a href="tel:+919607140999">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
