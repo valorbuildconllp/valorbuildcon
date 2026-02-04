@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: sms03/valorbuildcon
   branch: main
+  base_url: https://valorbuildconllp.com
+  auth_endpoint: /api/auth
 
 local_backend: true
 
