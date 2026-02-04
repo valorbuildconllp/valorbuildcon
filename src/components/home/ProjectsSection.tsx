@@ -45,14 +45,15 @@ const ProjectsSection = () => {
       data-animate-duration="0.9"
     >
       <div className="container">
-        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+        <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR PORTFOLIO
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Featured Projects
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-primary rounded mb-4" />
+          <p className="text-muted-foreground max-w-2xl">
             Explore our portfolio of successfully completed projects across 
             residential, commercial, and industrial sectors.
           </p>
