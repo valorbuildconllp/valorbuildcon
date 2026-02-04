@@ -9,7 +9,7 @@ const ProjectsSection = () => {
   ];
 
   const defaultRccProjects = [
-    { title: "Poodar School", location: "Punawale", scope: "RCC Work", status: "Completed" },
+    { title: "Podar School", location: "Punawale", scope: "RCC Work", status: "Completed" },
     { title: "DY Patil", location: "Ravet", scope: "RCC Work", status: "Completed" },
   ];
 
