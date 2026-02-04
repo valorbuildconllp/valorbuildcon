@@ -23,19 +23,20 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      className="py-20 bg-muted/30"
+      className="py-20 style={{ background: '#F0E9E0' }}"
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
       <div className="container">
-        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+        <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             TRUSTED PARTNERS
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Companies We Have Worked With
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-primary rounded mb-4" />
+          <p className="text-muted-foreground max-w-2xl">
             We collaborate with India’s most respected developers and infrastructure leaders,
             supporting them from mix-design to final pour on marquee projects.
           </p>
