@@ -107,6 +107,12 @@ const About = () => {
             From RCC civil works to precision RMC supply, our leadership collective keeps Valor Buildcon agile,
             responsive, and relentlessly focused on engineering trust for every stakeholder.
           </p>
+          <img
+            src="/images/founders_group_img/DSC00960.JPG"
+            alt="Valor Buildcon founders together"
+            className="w-full max-h-[420px] rounded-2xl object-cover border border-primary/20 shadow-md"
+            loading="lazy"
+          />
         </div>
       </section>
 
