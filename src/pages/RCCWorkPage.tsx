@@ -124,6 +124,7 @@ const CivilWorkPage = () => {
     "/images/civil_rcc_work/WhatsApp Image 2026-01-17 at 9.37.56 AM (2).jpeg",
     "/images/civil_rcc_work/WhatsApp Image 2026-01-17 at 9.37.56 AM (3).jpeg",
     "/images/civil_rcc_work/WhatsApp Image 2026-01-17 at 9.37.56 AM.jpeg",
+    "/images/civil_rcc_work/WhatsApp Image 2026-02-15 at 6.10.27 PM.jpeg",
     "/images/civil_rcc_work/DSC00948.JPG",
     "/images/civil_rcc_work/DSC00998.JPG",
     "/images/civil_rcc_work/DSC01007.JPG",
