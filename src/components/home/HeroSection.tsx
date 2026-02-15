@@ -18,11 +18,15 @@ const HeroSection = () => {
       {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          className="hidden md:block w-full h-full object-cover"
+          className="w-full h-full object-cover motion-reduce:hidden"
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          poster={heroImage}
+          disablePictureInPicture
+          controls={false}
           aria-hidden="true"
         >
           <source src="/heros_video.mp4" type="video/mp4" />
@@ -30,7 +34,7 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Valor Buildcon team at work"
-          className="block md:hidden w-full h-full object-cover"
+          className="hidden motion-reduce:block w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/70 md:from-black/50 md:via-black/20 md:to-black/60" />
       </div>
