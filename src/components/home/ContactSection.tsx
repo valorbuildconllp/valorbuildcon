@@ -51,26 +51,53 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+  const [showSendOptions, setShowSendOptions] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setShowSendOptions(true);
+  };
+
+  const buildMessageLines = () => [
+    `Name: ${formData.name}`,
+    `Email: ${formData.email}`,
+    `Phone: ${formData.phone}`,
+    `Subject: ${formData.subject}`,
+    "",
+    "Message:",
+    formData.message,
+  ];
+
+  const handleSendEmail = () => {
     const subject = `Contact Inquiry: ${formData.subject}`.trim();
-    const bodyLines = [
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      `Phone: ${formData.phone}`,
-      "",
-      "Message:",
-      formData.message,
-    ];
+    const bodyLines = buildMessageLines();
     const mailtoHref = `mailto:valorbuildconllp@gmail.com?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
     window.location.href = mailtoHref;
+    setShowSendOptions(false);
     toast({
       title: "Email Client Opened",
       description: "Your email client should open with your message. Please press send to complete the request.",
     });
+  };
+
+  const handleSendWhatsApp = () => {
+    const bodyLines = buildMessageLines();
+    const messageText = bodyLines.join("\n");
+    const whatsappHref = `https://wa.me/919607140999?text=${encodeURIComponent(
+      messageText,
+    )}`;
+    window.open(whatsappHref, "_blank", "noopener,noreferrer");
+    setShowSendOptions(false);
+    toast({
+      title: "WhatsApp Opened",
+      description: "WhatsApp should open with your message. Please press send to complete the request.",
+    });
+  };
+
+  const handleCancelSend = () => {
+    setShowSendOptions(false);
   };
   return (
     <section
@@ -220,6 +247,24 @@ const ContactSection = () => {
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
               </Button>
+              {showSendOptions && (
+                <div className="mt-4 rounded-lg border border-border bg-muted/40 p-4">
+                  <p className="text-sm font-medium text-foreground mb-3">
+                    Choose how you want to send your message
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button type="button" onClick={handleSendEmail}>
+                      Send via Email
+                    </Button>
+                    <Button type="button" onClick={handleSendWhatsApp}>
+                      Send via WhatsApp
+                    </Button>
+                    <Button type="button" variant="outline" onClick={handleCancelSend}>
+                      Cancel
+                    </Button>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
         </div>
