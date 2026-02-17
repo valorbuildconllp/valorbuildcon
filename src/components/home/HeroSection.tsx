@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useCallback, useMemo, useState } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-construction.jpg";
 
 const contactNumbers = [
   { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
@@ -47,7 +46,6 @@ const HeroSection = () => {
           muted
           playsInline
           preload="metadata"
-          poster={heroImage}
           disablePictureInPicture
           controls={false}
           aria-hidden="true"
@@ -56,11 +54,6 @@ const HeroSection = () => {
         >
           <source src={activeVideoSrc} type="video/mp4" />
         </video>
-        <img
-          src={heroImage}
-          alt="Valor Buildcon team at work"
-          className="hidden motion-reduce:block w-full h-full object-cover"
-        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/70 md:from-black/50 md:via-black/20 md:to-black/60" />
       </div>
 
