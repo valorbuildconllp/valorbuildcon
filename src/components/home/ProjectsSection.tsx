@@ -14,11 +14,11 @@ const ProjectsSection = () => {
   ];
 
   const defaultGalleryImages = [
-    "/images/civil_rcc_work/IMG-20260113-WA0000.jpg",
-    "/images/civil_rcc_work/IMG-20260113-WA0001.jpg",
-    "/images/civil_rcc_work/IMG-20260113-WA0002.jpg",
-    "/images/civil_rcc_work/IMG-20260113-WA0003.jpg",
-    "/images/civil_rcc_work/IMG-20260113-WA0004.jpg",
+    "/images/marquee_images/18Mag.jpg",
+    "/images/marquee_images/DYPU.jpg",
+    "/images/marquee_images/Legacy.jpg",
+    "/images/marquee_images/Podar.jpg",
+    "/images/marquee_images/Vilas Javdekar.jpg",
   ];
 
   const { civilProjects, rccProjects, galleryImages } = useContent<{
@@ -65,11 +65,11 @@ const ProjectsSection = () => {
               data-animate="fade-up"
               data-animate-delay={`${0.15 + index * 0.08}`}
             >
-              <div className="relative h-52 sm:h-60 lg:h-64 overflow-hidden">
+              <div className="relative h-52 sm:h-60 lg:h-64 overflow-hidden bg-muted/20 flex items-center justify-center">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain p-3"
                 />
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-xs sm:text-sm font-medium rounded">
                   {project.scope}
