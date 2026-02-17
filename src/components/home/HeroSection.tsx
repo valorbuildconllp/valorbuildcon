@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useCallback, useMemo, useState } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
@@ -7,7 +8,29 @@ const contactNumbers = [
   { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
 ];
 
+const heroVideos = [
+  "/videos/v1.mp4",
+  "/videos/v2.mp4",
+  "/videos/v3.mp4",
+  "/videos/v4.mp4",
+  "/videos/v5.mp4",
+];
+
 const HeroSection = () => {
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const activeVideoSrc = useMemo(
+    () => heroVideos[activeVideoIndex % heroVideos.length],
+    [activeVideoIndex]
+  );
+
+  const handleVideoEnd = useCallback(() => {
+    setActiveVideoIndex((prevIndex) => (prevIndex + 1) % heroVideos.length);
+  }, []);
+
+  const handleVideoError = useCallback(() => {
+    setActiveVideoIndex((prevIndex) => (prevIndex + 1) % heroVideos.length);
+  }, []);
+
   return (
     <section
       className="relative min-h-[85vh] sm:min-h-[100vh] flex items-center py-12 sm:py-16 -mt-[90px] sm:-mt-[125px] z-[1]"
@@ -18,9 +41,9 @@ const HeroSection = () => {
       {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          className="w-full h-full object-cover motion-reduce:hidden"
+          key={activeVideoSrc}
+          className="w-full h-full object-cover object-center motion-reduce:hidden"
           autoPlay
-          loop
           muted
           playsInline
           preload="metadata"
@@ -28,8 +51,10 @@ const HeroSection = () => {
           disablePictureInPicture
           controls={false}
           aria-hidden="true"
+          onEnded={handleVideoEnd}
+          onError={handleVideoError}
         >
-          <source src="/heros_video.mp4" type="video/mp4" />
+          <source src={activeVideoSrc} type="video/mp4" />
         </video>
         <img
           src={heroImage}
