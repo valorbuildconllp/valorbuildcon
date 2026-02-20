@@ -32,7 +32,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-[100vh] flex items-center py-12 sm:py-16 -mt-[90px] sm:-mt-[125px] z-[1]"
+      className="relative min-h-[85vh] sm:min-h-[100vh] flex items-center py-12 sm:py-16 mt-0 lg:-mt-[125px] z-[1]"
       data-animate="fade-up"
       data-animate-duration="1"
       data-animate-once="true"
