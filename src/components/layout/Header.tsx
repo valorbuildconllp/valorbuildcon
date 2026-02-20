@@ -22,8 +22,20 @@ const Header = () => {
       let lastScrollY = window.scrollY;
       const navbar = document.getElementById("navbar");
       const container = document.getElementById("navbar-container");
+      const desktopMediaQuery = window.matchMedia("(min-width: 1024px)");
+
+      const resetShrinkClasses = () => {
+        navbar?.classList.remove("navbar-shrink");
+        container?.classList.remove("navbar-shrink-container");
+      };
+
       function onScroll() {
         if (!navbar || !container) return;
+        if (!desktopMediaQuery.matches) {
+          resetShrinkClasses();
+          lastScrollY = window.scrollY;
+          return;
+        }
         if (window.scrollY > lastScrollY && window.scrollY > 30) {
           // Scrolling down
           navbar.classList.add("navbar-shrink");
@@ -35,8 +47,22 @@ const Header = () => {
         }
         lastScrollY = window.scrollY;
       }
+
+      const onViewportChange = () => {
+        if (!desktopMediaQuery.matches) {
+          resetShrinkClasses();
+        }
+        lastScrollY = window.scrollY;
+      };
+
       window.addEventListener("scroll", onScroll);
-      return () => window.removeEventListener("scroll", onScroll);
+      desktopMediaQuery.addEventListener("change", onViewportChange);
+      onViewportChange();
+
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+        desktopMediaQuery.removeEventListener("change", onViewportChange);
+      };
     }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
