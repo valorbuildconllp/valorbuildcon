@@ -108,7 +108,7 @@ const About = () => {
             responsive, and relentlessly focused on engineering trust for every stakeholder.
           </p>
           <img
-            src="/images/founders_group_img/DSC00960.JPG"
+            src="/images/founders_group_img/DSC00960.webp"
             alt="Valor Buildcon founders together"
             className="w-full max-h-[420px] rounded-2xl object-cover border border-primary/20 shadow-md"
             loading="lazy"
