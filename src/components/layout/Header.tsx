@@ -1,6 +1,6 @@
 import { FocusEvent, useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, MessageCircle, Phone, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type NavChild = {
@@ -16,32 +16,7 @@ type NavItem = {
   children: NavChild[];
 };
 
-const phoneNumbers = [
-  { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
-];
-
 const Header = () => {
-      // Hide top bar on scroll down, show at top
-      useEffect(() => {
-        const topBar = document.getElementById("main-topbar");
-        let ticking = false;
-        function handleScroll() {
-          if (!topBar) return;
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              if (window.scrollY > 10) {
-                topBar.classList.add("topbar-hide");
-              } else {
-                topBar.classList.remove("topbar-hide");
-              }
-              ticking = false;
-            });
-            ticking = true;
-          }
-        }
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
     // Scroll trigger for shrinking navbar
     useEffect(() => {
       let lastScrollY = window.scrollY;
@@ -66,9 +41,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isContactHovered, setIsContactHovered] = useState(false);
+  const [isContactPinned, setIsContactPinned] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const dropdownCloseTimeout = useRef<number | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
+  const contactWidgetRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
+  const isContactOpen = isTouchDevice ? isContactPinned : isContactHovered || isContactPinned;
   const navItems: NavItem[] = [{
     label: "Home",
     path: "/"
@@ -150,29 +130,32 @@ const Header = () => {
     syncHeaderHeight();
   }, [isMenuOpen, openMobileDropdown, syncHeaderHeight]);
 
-    return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b-0 shadow-none rounded-none pointer-events-none">
-      <div id="main-topbar" className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2 topbar-transition">
-        <div className="container flex flex-col gap-2 text-center text-[12px] sm:text-sm sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center justify-center gap-2 text-white/80 sm:justify-start sm:gap-6">
-            {phoneNumbers.map((number) => (
-              <a
-                key={number.href}
-                href={number.href}
-                className="flex items-center gap-2 hover:text-white transition-colors leading-tight whitespace-normal"
-              >
-                <Phone className="h-4 w-4" />
-                <span>{number.label}</span>
-              </a>
-            ))}
-            <a href="mailto:valorbuildconllp@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors leading-tight whitespace-normal">
-              <Mail className="h-4 w-4" />
-              <span>valorbuildconllp@gmail.com</span>
-            </a>
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 text-center sm:text-right" />
-        </div>
-      </div>
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateTouchMode = () => setIsTouchDevice(mediaQuery.matches);
+    updateTouchMode();
+
+    mediaQuery.addEventListener("change", updateTouchMode);
+    return () => mediaQuery.removeEventListener("change", updateTouchMode);
+  }, []);
+
+  useEffect(() => {
+    if (!isTouchDevice || !isContactPinned) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (contactWidgetRef.current?.contains(target)) return;
+      setIsContactPinned(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [isTouchDevice, isContactPinned]);
+
+    return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b-0 shadow-none rounded-none pointer-events-none">
       <div className="container transition-all duration-300 py-5 lg:py-7 pointer-events-auto" id="navbar-container" style={{position:'relative',zIndex:2}}>
         <nav className="flex items-center justify-between gap-3 rounded-full px-4 py-2 transition-all duration-300 navbar-pill" id="navbar" style={{position:'relative',zIndex:2}}>
 
@@ -281,6 +264,46 @@ const Header = () => {
               </a>
             </div>
           </div>}
+      </div>
+
+      <div
+        ref={contactWidgetRef}
+        className="fixed bottom-3 left-3 sm:bottom-4 sm:left-4 z-50 pointer-events-auto flex flex-col items-start"
+        onMouseEnter={() => {
+          if (!isTouchDevice) setIsContactHovered(true);
+        }}
+        onMouseLeave={() => {
+          if (!isTouchDevice) setIsContactHovered(false);
+        }}
+      >
+        <div
+          className={cn(
+            "mb-2 w-[min(260px,calc(100vw-1.5rem))] sm:w-[260px] rounded-xl border border-border bg-background/95 backdrop-blur-sm shadow-lg p-3 text-sm origin-bottom-left transition-all duration-300 ease-out",
+            isContactOpen
+              ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+              : "opacity-0 translate-y-2 scale-95 pointer-events-none"
+          )}
+          aria-hidden={!isContactOpen}
+        >
+          <a href="tel:+919607140999" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors duration-200">
+            <Phone className="h-4 w-4" />
+            <span>9607140999</span>
+          </a>
+          <a href="mailto:valorbuildconllp@gmail.com" className="mt-2 flex items-center gap-2 text-foreground hover:text-primary transition-colors duration-200">
+            <Mail className="h-4 w-4" />
+            <span>valorbuildconllp@gmail.com</span>
+          </a>
+        </div>
+
+        <button
+          type="button"
+          className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-primary text-primary-foreground border border-primary/70 shadow-md flex items-center justify-center transition-all duration-300 ease-out hover:bg-primary/90 hover:scale-105"
+          aria-label="Show contact details"
+          aria-expanded={isContactOpen}
+          onClick={() => setIsContactPinned((prev) => !prev)}
+        >
+          <MessageCircle className="h-5 w-5 sm:h-5 sm:w-5" />
+        </button>
       </div>
     </header>;
 };
