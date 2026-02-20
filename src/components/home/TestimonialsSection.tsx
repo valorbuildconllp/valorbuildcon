@@ -1,11 +1,11 @@
 import { Building2 } from "lucide-react";
 import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
 const marqueeImages = [
-  "/images/marquee_images/18Mag.webp",
-  "/images/marquee_images/DYPU.webp",
-  "/images/marquee_images/Legacy.webp",
-  "/images/marquee_images/Podar.webp",
-  "/images/marquee_images/Vilas Javdekar.webp",
+  "/images/marquee_images/18Mag.jpg",
+  "/images/marquee_images/DYPU.jpg",
+  "/images/marquee_images/Legacy.jpg",
+  "/images/marquee_images/Podar.jpg",
+  "/images/marquee_images/Vilas Javdekar.jpg",
 ];
 
 const TestimonialsSection = () => {
