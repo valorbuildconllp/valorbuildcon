@@ -191,9 +191,9 @@ const Header = () => {
               alt="Valor Buildcon logo"
               className="h-10 w-auto object-contain sm:h-12"
             />
-            <div className="hidden sm:block">
-              <div className="font-semibold navbar-lightblue">Valor Buildcon LLP</div>
-              <div className="text-xs text-muted-foreground">Experience the Excellence</div>
+            <div className="block min-w-0">
+              <div className="font-semibold navbar-lightblue text-sm sm:text-base leading-tight truncate">Valor Buildcon LLP</div>
+              <div className="hidden sm:block text-xs text-muted-foreground">Experience the Excellence</div>
             </div>
           </Link>
 
