@@ -33,7 +33,7 @@ const BackToTopButton = () => {
       aria-label="Back to top"
       onClick={handleClick}
       className={cn(
-        "fixed bottom-6 right-6 z-50 rounded-full bg-primary p-3 text-primary-foreground shadow-lg",
+        "fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 rounded-full bg-primary p-3 text-primary-foreground shadow-lg",
         "transition-all duration-300 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary",
         isVisible
           ? "opacity-100 translate-y-0 pointer-events-auto"
