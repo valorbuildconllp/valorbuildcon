@@ -156,7 +156,7 @@ const Header = () => {
   }, [isTouchDevice, isContactPinned]);
 
     return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b-0 shadow-none rounded-none pointer-events-none">
-      <div className="container transition-all duration-300 py-5 lg:py-7 pointer-events-auto" id="navbar-container" style={{position:'relative',zIndex:2}}>
+      <div className="w-full px-3 sm:px-4 lg:container transition-all duration-300 py-3 lg:py-7 pointer-events-auto" id="navbar-container" style={{position:'relative',zIndex:2}}>
         <nav className="flex items-center justify-between gap-3 rounded-full px-4 py-2 transition-all duration-300 navbar-pill" id="navbar" style={{position:'relative',zIndex:2}}>
 
           <Link to="/" className="flex items-center gap-2 min-w-0">
