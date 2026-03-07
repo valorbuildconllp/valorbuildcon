@@ -21,6 +21,17 @@ const ProjectsSection = () => {
     "/images/marquee_images/Vilas Javdekar.jpg",
   ];
 
+  const projectLogoByTitle: Record<string, string> = {
+    "podar school": "/images/marquee_images/Podar.jpg",
+    "dy patil": "/images/marquee_images/DYPU.jpg",
+    "legacy milestone": "/images/marquee_images/Legacy.jpg",
+    "vilas jawadekar": "/images/marquee_images/Vilas Javdekar.jpg",
+    "vilas javdekar": "/images/marquee_images/Vilas Javdekar.jpg",
+    "18 magnitude": "/images/marquee_images/18Mag.jpg",
+  };
+
+  const normalizeTitle = (title: string) => title.trim().toLowerCase();
+
   const { civilProjects, rccProjects, galleryImages } = useContent<{
     civilProjects: typeof defaultCivilProjects;
     rccProjects: typeof defaultRccProjects;
@@ -33,7 +44,9 @@ const ProjectsSection = () => {
 
   const completedProjects = [...rccProjects, ...civilProjects].map((project, index) => ({
     ...project,
-    image: galleryImages[index % galleryImages.length],
+    image:
+      projectLogoByTitle[normalizeTitle(project.title)] ??
+      galleryImages[index % galleryImages.length],
   }));
 
   return (
