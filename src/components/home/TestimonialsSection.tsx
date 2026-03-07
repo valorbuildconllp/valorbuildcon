@@ -1,5 +1,5 @@
-import { Building2 } from "lucide-react";
 import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
+import { useImageAssets } from "@/hooks/use-image-assets";
 const marqueeImages = [
   "/images/marquee_images/18Mag.jpg",
   "/images/marquee_images/DYPU.jpg",
@@ -9,6 +9,8 @@ const marqueeImages = [
 ];
 
 const TestimonialsSection = () => {
+  const { resolveImagePath } = useImageAssets();
+  const resolvedMarqueeImages = marqueeImages.map(resolveImagePath);
 
   return (
     <section
@@ -32,7 +34,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <DirectionalMarquee items={marqueeImages} direction="left" speed={30} isImageMarquee />
+        <DirectionalMarquee items={resolvedMarqueeImages} direction="left" speed={30} isImageMarquee />
       </div>
     </section>
   );
