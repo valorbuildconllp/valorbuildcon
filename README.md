@@ -30,6 +30,12 @@ Modern marketing site for Valor Buildcon LLP showcasing RCC work, RMC plant capa
 ## 🔐 CMS Authentication (Vercel)
 Decap CMS uses GitHub OAuth via Vercel serverless functions in `api/`.
 
+## 🖼️ Image Source (Supabase)
+- Local `public/images` assets have been migrated out of the project.
+- Image metadata lives in `public.image_assets` in Supabase.
+- Actual binaries are hosted in Supabase Storage bucket `project-images`.
+- Frontend image paths are resolved at runtime using the `image_assets.public_path` value.
+
 ### 1) Create a GitHub OAuth App
 - Homepage URL: your site domain (e.g. https://valorbuildconllp.in)
 - Authorization callback URL: https://your-domain.com/api/callback?provider=github
