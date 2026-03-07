@@ -14,7 +14,7 @@ const openings = [
   {
     title: "Field Technician",
     team: "Site Execution",
-    location: "Pune Metropolitan Region",
+    location: "Pune, Maharashtra",
     type: "Full Time",
     icon: HardHat,
     description:
