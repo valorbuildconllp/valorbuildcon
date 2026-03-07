@@ -1,4 +1,5 @@
 import { CheckCircle, Target, Eye, Award } from "lucide-react";
+import { useImageAssets } from "@/hooks/use-image-assets";
 
 const partnerCompanies = [
   "Legacy Life Spaces",
@@ -15,6 +16,8 @@ const partnerCompanies = [
 ];
 
 const AboutSection = () => {
+  const { resolveImagePath } = useImageAssets();
+
   const stats = [
     { value: "5+", label: "Projects Delivered / Upcoming" },
     { value: "10+", label: "Trusted Developer Partners" },
@@ -45,7 +48,7 @@ const AboutSection = () => {
           {/* Image Side */}
           <div className="relative" data-animate="fade-right" data-animate-delay="0.1">
             <img 
-              src="/images/founders_group_img/DSC00965.webp" 
+              src={resolveImagePath("/images/founders_group_img/DSC00965.webp")} 
               alt="Valor Buildcon team at construction site" 
               className="w-full h-64 sm:h-[400px] lg:h-[500px] object-cover rounded-lg"
             />
