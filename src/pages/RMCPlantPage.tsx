@@ -5,11 +5,11 @@ import {
   Truck, 
   Beaker, 
   Settings, 
-  Phone,
-  MapPin
+  Phone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
 import rmcImage from "@/assets/rmc-plant.jpg";
 import qualityLab from "@/assets/quality-lab.jpg";
 import { useContent } from "@/hooks/use-content";
@@ -40,16 +40,18 @@ const RMCPlantPage = () => {
     "Temperature Monitoring",
   ];
 
-  const clients = [
-    "Millennium Samruddhi / Amara, Punawale",
-    "Rohit Group, Kate Wasti",
-    "Legacy Infinity Home",
-    "18 Magnitude",
-    "Namrata Group",
-    "Rahuldeep Contractor",
-    "Kolte Patil",
-    "Vinode Wakadkar Associates",
-    "Perfect Constructions",
+  const consultancyMarqueeImages = [
+    "/images/marquee_images/18Mag.jpg",
+    "/images/marquee_images/DYPU.jpg",
+    "/images/marquee_images/Kolte_Patil.jpg",
+    "/images/marquee_images/Legacy.jpg",
+    "/images/marquee_images/Millenium_Amara.jpg",
+    "/images/marquee_images/Millenium_Samruddhi.jpg",
+    "/images/marquee_images/Namrata_Group.png",
+    "/images/marquee_images/Perfect_Constructions.avif",
+    "/images/marquee_images/Podar.jpg",
+    "/images/marquee_images/Rohit_Group.jpg",
+    "/images/marquee_images/Vilas Javdekar.jpg",
   ];
 
 
@@ -244,21 +246,16 @@ const RMCPlantPage = () => {
           </div>
 
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+            className="bg-card border border-border rounded-lg p-4 sm:p-6"
             data-animate="fade-up"
             data-animate-delay="0.2"
-            data-animate-targets="[data-client-card]"
-            data-animate-stagger="0.06"
           >
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border p-5 sm:p-6 text-center flex items-center justify-center h-24 rounded-lg"
-                data-client-card
-              >
-                <span className="font-medium text-foreground">{client}</span>
-              </div>
-            ))}
+            <DirectionalMarquee
+              items={consultancyMarqueeImages}
+              direction="left"
+              speed={42}
+              isImageMarquee
+            />
           </div>
         </div>
       </section>
@@ -391,16 +388,23 @@ const RMCPlantPage = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
                 Plant Location
               </h2>
-              <div className="bg-muted h-[240px] sm:h-[300px] flex items-center justify-center border border-border rounded-lg">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">Google Map</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Jambe Goan, Tal. Mulshi<br />
-                    Pune, Maharashtra 411033
-                  </p>
-                </div>
+              <div className="overflow-hidden border border-border rounded-lg">
+                <iframe
+                  title="Valor Buildcon RMC Plant Map"
+                  src="https://www.google.com/maps?output=embed&q=Valor%20buildcon%20llp%2C%20Jambe%20Goan%2C%20Mulshi%2C%20Pune"
+                  className="w-full h-[260px] sm:h-[320px]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
+              <a
+                href="https://maps.app.goo.gl/srgm4ydgRSjSUg3G8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex mt-4 text-sm font-medium text-primary hover:underline"
+              >
+                Open in Google Maps
+              </a>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
               <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
