@@ -8,6 +8,7 @@ import RCCWorkPage from "./pages/RCCWorkPage";
 import RMCPlantPage from "./pages/RMCPlantPage";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/rmc-plant" element={<RMCPlantPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/careers" element={<Careers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
