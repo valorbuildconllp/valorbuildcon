@@ -1,7 +1,10 @@
 import { Building2, MapPin, Calendar } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
+import { useImageAssets } from "@/hooks/use-image-assets";
 
 const ProjectsSection = () => {
+  const { resolveImagePath } = useImageAssets();
+
   const defaultCivilProjects = [
     { title: "Legacy Milestone", location: "Punawale", scope: "Excavation", status: "Completed" },
     { title: "Vilas Jawadekar", location: "Kate Wasti", scope: "Excavation", status: "Completed" },
@@ -45,8 +48,8 @@ const ProjectsSection = () => {
   const completedProjects = [...rccProjects, ...civilProjects].map((project, index) => ({
     ...project,
     image:
-      projectLogoByTitle[normalizeTitle(project.title)] ??
-      galleryImages[index % galleryImages.length],
+      resolveImagePath(projectLogoByTitle[normalizeTitle(project.title)] ??
+      galleryImages[index % galleryImages.length]),
   }));
 
   return (
