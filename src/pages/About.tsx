@@ -5,21 +5,21 @@ import { useContent } from "@/hooks/use-content";
 const pillars = [
   {
     name: "Virendra Anil Kate",
-    title: "Founding Partner",
+    title: "Managing Director",
     focus: "Vision & Leadership",
     description:
       "Guides Valor Buildcon's long-term strategy, forging partnerships and cultivating a culture of craftsmanship across every site we touch.",
   },
   {
     name: "Abhayraje Gangadhar Vinode",
-    title: "Operations Partner",
+    title: "Managing Director",
     focus: "Execution & Delivery",
     description:
       "Oversees civil execution, quality labs, and on-ground teams to ensure structures are delivered safely, precisely, and ahead of schedule.",
   },
   {
     name: "Abhilash Tukaram Kalokhe",
-    title: "Projects Partner",
+    title: "Managing Director",
     focus: "Client Success",
     description:
       "Leads client engagements and translates complex design intents into actionable construction programs across RCC and RMC projects.",
