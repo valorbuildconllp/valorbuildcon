@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, Factory, Layers, Shield, Truck, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useImageAssets } from "@/hooks/use-image-assets";
 
 const ServicesSection = () => {
+  const { resolveImagePath } = useImageAssets();
+
   const rccServices = [
     { icon: Building2, title: "Foundation Work", description: "Strong foundations for multi-story buildings" },
     { icon: Layers, title: "Slab Casting", description: "Precision slab work with quality finish" },
@@ -46,7 +49,7 @@ const ServicesSection = () => {
           >
             <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
-                src="/images/civil_rcc_work/DSC01093.webp" 
+                src={resolveImagePath("/images/civil_rcc_work/DSC01093.webp")} 
                 alt="RCC structural work" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -92,7 +95,7 @@ const ServicesSection = () => {
           >
             <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
-                src="/images/rmc_work/IMG-20260113-WA0019.webp" 
+                src={resolveImagePath("/images/rmc_work/IMG-20260113-WA0019.webp")} 
                 alt="RMC Plant facility" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
