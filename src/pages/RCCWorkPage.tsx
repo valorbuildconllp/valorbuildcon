@@ -15,8 +15,11 @@ import Layout from "@/components/layout/Layout";
 import civilWorkImage from "@/assets/rcc-work.jpg";
 import teamImage from "@/assets/team-work.jpg";
 import { useContent } from "@/hooks/use-content";
+import { useImageAssets } from "@/hooks/use-image-assets";
 
 const CivilWorkPage = () => {
+  const { resolveImagePath } = useImageAssets();
+
   const civilServices = [
     {
       icon: Shield,
@@ -155,7 +158,7 @@ const CivilWorkPage = () => {
     team: civilTeam,
   });
 
-  const resolvedGalleryImages = galleryImages.length >= 8 ? galleryImages : civilGalleryImages;
+  const resolvedGalleryImages = (galleryImages.length >= 8 ? galleryImages : civilGalleryImages).map(resolveImagePath);
   const rccMaterialImages = resolvedGalleryImages.slice(8);
   const civilWorkImages = resolvedGalleryImages.slice(0, 8);
   const leadMember = team.find((member) => member.name === "Girish Desai") ?? team[0];
@@ -366,7 +369,7 @@ const CivilWorkPage = () => {
                     >
                       {leadMember.photo ? (
                         <img
-                          src={leadMember.photo}
+                          src={resolveImagePath(leadMember.photo)}
                           alt={leadMember.name}
                           className="aspect-[4/3] w-full rounded-xl object-cover mb-6"
                           loading="lazy"
@@ -395,7 +398,7 @@ const CivilWorkPage = () => {
                         <div className="flex items-center gap-4">
                           {member.photo ? (
                             <img
-                              src={member.photo}
+                              src={resolveImagePath(member.photo)}
                               alt={member.name}
                               className="h-16 w-16 rounded-lg object-cover"
                               loading="lazy"
