@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { Shield, Target, HardHat } from "lucide-react";
 import { useContent } from "@/hooks/use-content";
+import { useImageAssets } from "@/hooks/use-image-assets";
 
 const pillars = [
   {
@@ -29,6 +30,8 @@ const pillars = [
 const pillarIcons = [Shield, Target, HardHat];
 
 const About = () => {
+  const { resolveImagePath } = useImageAssets();
+
   const { pillars: cmsPillars } = useContent<{
     pillars: Array<typeof pillars[number] & { photo?: string }>;
   }>("/content/about.json", { pillars });
@@ -76,7 +79,7 @@ const About = () => {
           >
             {photo ? (
               <img
-                src={photo}
+                src={resolveImagePath(photo)}
                 alt={name}
                 className="aspect-square w-full rounded-2xl object-cover"
                 loading="lazy"
@@ -108,7 +111,7 @@ const About = () => {
             responsive, and relentlessly focused on engineering trust for every stakeholder.
           </p>
           <img
-            src="/images/founders_group_img/DSC00960.webp"
+            src={resolveImagePath("/images/founders_group_img/DSC00960.webp")}
             alt="Valor Buildcon founders together"
             className="w-full max-h-[420px] rounded-2xl object-cover border border-primary/20 shadow-md"
             loading="lazy"
