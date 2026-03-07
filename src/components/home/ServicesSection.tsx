@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, Factory, Layers, Shield, Truck, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import rccImage from "@/assets/rcc-work.jpg";
-import rmcImage from "@/assets/rmc-plant.jpg";
 
 const ServicesSection = () => {
   const rccServices = [
@@ -48,7 +46,7 @@ const ServicesSection = () => {
           >
             <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
-                src={rccImage} 
+                src="/images/civil_rcc_work/DSC01093.webp" 
                 alt="RCC structural work" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -94,7 +92,7 @@ const ServicesSection = () => {
           >
             <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
-                src={rmcImage} 
+                src="/images/rmc_work/IMG-20260113-WA0019.webp" 
                 alt="RMC Plant facility" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
