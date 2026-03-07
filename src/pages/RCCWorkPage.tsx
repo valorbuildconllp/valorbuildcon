@@ -68,19 +68,7 @@ const CivilWorkPage = () => {
   ];
 
   const materialTypes = [
-    "Cement (OPC/PPC)",
-    "Manufactured sand (M-sand)",
-    "20 mm & 10 mm aggregates",
-    "Admixtures & waterproofing compounds",
-  ];
-
-  const machineryStrengths = [
-    { name: "Steel & Aluminum Formwork", detail: "12+ modular shuttering sets for towers and podiums" },
-    { name: "Concrete Vibrators & Screeds", detail: "18 units covering slabs, cores, and podium decks" },
-    { name: "Rebar Cutting & Bending Machines", detail: "4 automated stations for faster steel cycles" },
-    { name: "Passenger & Material Hoists", detail: "3 hoists with 1.5T capacity for vertical transport" },
-    { name: "Laser Levels & Total Stations", detail: "Advanced survey suite for millimeter-accurate layouts" },
-    { name: "Transit Mixers & Pumps", detail: "15+ mixers and 4 pumps paired with in-house RMC plant" },
+    "Cuplock scafolding of 15000sqft available and more",
   ];
 
   const civilProjects = [
@@ -91,7 +79,6 @@ const CivilWorkPage = () => {
 
   const rccProjects = [
     { title: "Podar School", location: "Punawale", scope: "RCC Work", status: "Completed" },
-    { title: "DY Patil", location: "Ravet", scope: "RCC Work", status: "Completed" },
   ];
 
   const civilGalleryImages = [
@@ -364,10 +351,74 @@ const CivilWorkPage = () => {
                   {materialTypes.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-muted-foreground">
                       <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="font-bold text-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Leadership</h3>
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
+                  {leadMember ? (
+                    <div
+                      className="bg-card border border-border rounded-2xl p-6 sm:p-8 lg:p-10"
+                      data-animate="fade-up"
+                      data-animate-delay="0.2"
+                    >
+                      {leadMember.photo ? (
+                        <img
+                          src={leadMember.photo}
+                          alt={leadMember.name}
+                          className="aspect-[4/3] w-full rounded-xl object-cover mb-6"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
+                          <span>Photo placeholder for {leadMember.name}</span>
+                        </div>
+                      )}
+                      <p className="text-sm font-semibold text-secondary mb-2">Civil Leadership</p>
+                      <h3 className="text-2xl sm:text-3xl font-semibold text-foreground">{leadMember.name}</h3>
+                      <p className="text-primary font-medium mb-4">{leadMember.role}</p>
+                      <p className="text-muted-foreground leading-relaxed">{leadMember.focus}</p>
+                    </div>
+                  ) : null}
+
+                  <div
+                    className="grid grid-cols-1 gap-6"
+                    data-animate="fade-up"
+                    data-animate-delay="0.25"
+                    data-animate-targets="[data-civil-team]"
+                    data-animate-stagger="0.08"
+                  >
+                    {subMembers.map((member) => (
+                      <div key={member.name} className="bg-card border border-border rounded-xl p-5 sm:p-6" data-civil-team>
+                        <div className="flex items-center gap-4">
+                          {member.photo ? (
+                            <img
+                              src={member.photo}
+                              alt={member.name}
+                              className="h-16 w-16 rounded-lg object-cover"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <div className="h-16 w-16 rounded-lg bg-muted flex items-center justify-center text-[10px] text-muted-foreground text-center px-2">
+                              Photo
+                            </div>
+                          )}
+                          <div>
+                            <h4 className="text-lg font-semibold text-foreground">{member.name}</h4>
+                            <p className="text-sm text-primary font-medium">{member.role}</p>
+                          </div>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-3">{member.focus}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -427,30 +478,6 @@ const CivilWorkPage = () => {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Machinery Strength</h3>
-              <p className="text-muted-foreground mb-6">
-                Machinery inventory supporting excavation, formwork, and RCC execution.
-              </p>
-              <div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                data-animate="fade-up"
-                data-animate-delay="0.45"
-                data-animate-targets="[data-equipment-card]"
-                data-animate-stagger="0.06"
-              >
-                {machineryStrengths.map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-card border border-border p-5 sm:p-6 rounded-lg"
-                    data-equipment-card
-                  >
-                    <div className="text-lg font-semibold text-foreground mb-2">{item.name}</div>
-                    <p className="text-sm text-muted-foreground">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -480,83 +507,6 @@ const CivilWorkPage = () => {
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
               <img src={teamImage} alt="Safety measures" className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership & Staff Section */}
-      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
-        <div className="container">
-          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              LEADERSHIP & STAFF
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
-              Civil Leadership & Core Site Team
-            </h2>
-            <div className="w-16 h-1 bg-primary rounded mb-4" />
-            <p className="text-muted-foreground max-w-2xl text-left">
-              Photo placeholders below will be replaced with official portraits once the final image assets are shared.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
-            {leadMember ? (
-              <div
-                className="bg-card border border-border rounded-2xl p-6 sm:p-8 lg:p-10"
-                data-animate="fade-up"
-                data-animate-delay="0.2"
-              >
-                {leadMember.photo ? (
-                  <img
-                    src={leadMember.photo}
-                    alt={leadMember.name}
-                    className="aspect-[4/3] w-full rounded-xl object-cover mb-6"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
-                    <span>Photo placeholder for {leadMember.name}</span>
-                  </div>
-                )}
-                <p className="text-sm font-semibold text-secondary mb-2">Civil Leadership</p>
-                <h3 className="text-2xl sm:text-3xl font-semibold text-foreground">{leadMember.name}</h3>
-                <p className="text-primary font-medium mb-4">{leadMember.role}</p>
-                <p className="text-muted-foreground leading-relaxed">{leadMember.focus}</p>
-              </div>
-            ) : null}
-
-            <div
-              className="grid grid-cols-1 gap-6"
-              data-animate="fade-up"
-              data-animate-delay="0.25"
-              data-animate-targets="[data-civil-team]"
-              data-animate-stagger="0.08"
-            >
-              {subMembers.map((member) => (
-                <div key={member.name} className="bg-card border border-border rounded-xl p-5 sm:p-6" data-civil-team>
-                  <div className="flex items-center gap-4">
-                    {member.photo ? (
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="h-16 w-16 rounded-lg object-cover"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="h-16 w-16 rounded-lg bg-muted flex items-center justify-center text-[10px] text-muted-foreground text-center px-2">
-                        Photo
-                      </div>
-                    )}
-                    <div>
-                      <h4 className="text-lg font-semibold text-foreground">{member.name}</h4>
-                      <p className="text-sm text-primary font-medium">{member.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-3">{member.focus}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
