@@ -93,6 +93,9 @@ const Header = () => {
   }, {
     label: "About Us",
     path: "/about"
+  }, {
+    label: "Careers",
+    path: "/careers"
   }];
   const isActive = (path: string) => {
     if (path.startsWith("/#")) return false;
