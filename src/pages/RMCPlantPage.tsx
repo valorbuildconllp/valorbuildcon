@@ -13,8 +13,11 @@ import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
 import rmcImage from "@/assets/rmc-plant.jpg";
 import qualityLab from "@/assets/quality-lab.jpg";
 import { useContent } from "@/hooks/use-content";
+import { useImageAssets } from "@/hooks/use-image-assets";
 
 const RMCPlantPage = () => {
+  const { resolveImagePath } = useImageAssets();
+
   const plantInfo = [
     { label: "Plant Capacity", value: "70 m³/hr" },
     { label: "Transit Mixers", value: "15+ Units" },
@@ -79,6 +82,9 @@ const RMCPlantPage = () => {
     galleryImages: rmcGalleryImages,
     staff: rmcStaff,
   });
+
+  const resolvedGalleryImages = galleryImages.map(resolveImagePath);
+  const resolvedConsultancyMarqueeImages = consultancyMarqueeImages.map(resolveImagePath);
 
   return (
     <Layout>
@@ -206,7 +212,7 @@ const RMCPlantPage = () => {
             data-animate-targets="[data-rmc-gallery]"
             data-animate-stagger="0.05"
           >
-            {galleryImages.map((src, index) => (
+            {resolvedGalleryImages.map((src, index) => (
               <div
                 key={src}
                 className="relative h-52 sm:h-60 md:h-64 overflow-hidden rounded-lg border border-border group"
@@ -251,7 +257,7 @@ const RMCPlantPage = () => {
             data-animate-delay="0.2"
           >
             <DirectionalMarquee
-              items={consultancyMarqueeImages}
+              items={resolvedConsultancyMarqueeImages}
               direction="left"
               speed={42}
               isImageMarquee
@@ -355,7 +361,7 @@ const RMCPlantPage = () => {
               <div key={staffMember.name} className="bg-card border border-dashed border-border p-5 sm:p-6 rounded-xl" data-staff-card>
                 {staffMember.photo ? (
                   <img
-                    src={staffMember.photo}
+                    src={resolveImagePath(staffMember.photo)}
                     alt={staffMember.name}
                     className="aspect-square w-full rounded-lg object-cover mb-4"
                     loading="lazy"
