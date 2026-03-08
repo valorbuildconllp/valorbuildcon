@@ -97,7 +97,7 @@ const ServicesSection = () => {
               <img 
                 src={resolveImagePath("/images/rmc_work/WhatsApp Image 2026-03-08 at 4.53.23 PM.webp")} 
                 alt="RMC Plant facility" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-[center_78%] group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-foreground/40" />
               <div className="absolute inset-0 flex items-center justify-center">
