@@ -95,7 +95,7 @@ const ServicesSection = () => {
           >
             <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
-                src={resolveImagePath("/images/rmc_work/IMG-20260113-WA0019.webp")} 
+                src={resolveImagePath("/images/rmc_work/WhatsApp Image 2026-03-08 at 4.53.378 PM.webp")} 
                 alt="RMC Plant facility" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
