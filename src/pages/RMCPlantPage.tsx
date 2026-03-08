@@ -47,6 +47,14 @@ const RMCPlantPage = () => {
     "/images/rmc_work/IMG_1901.JPG.webp",
     "/images/rmc_work/IMG_1903.JPG.webp",
     "/images/rmc_work/IMG_19055.JPG.webp",
+    "/images/rmc_work/IMG_1892.JPG.webp",
+    "/images/rmc_work/IMG_1893.JPG.webp",
+    "/images/rmc_work/IMG_1894.JPG.webp",
+    "/images/rmc_work/IMG_1896.JPG.webp",
+    "/images/rmc_work/IMG_1897.JPG.webp",
+    "/images/rmc_work/IMG_1899.JPG.webp",
+    "/images/rmc_work/IMG_1906.JPG.webp",
+    "/images/rmc_work/IMG_1907.JPG.webp",
   ];
 
   const consultancyMarqueeImages = [
