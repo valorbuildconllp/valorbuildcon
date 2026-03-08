@@ -10,7 +10,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
-import rmcImage from "@/assets/rmc-plant.jpg";
 import { useContent } from "@/hooks/use-content";
 import { useImageAssets } from "@/hooks/use-image-assets";
 
@@ -106,7 +105,7 @@ const RMCPlantPage = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src={rmcImage} alt="RMC Plant" className="w-full h-full object-cover" />
+          <img src={resolveImagePath("/images/rmc_work/WhatsApp Image 2026-03-08 at 4.53.23 PM.webp")} alt="RMC Plant" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
