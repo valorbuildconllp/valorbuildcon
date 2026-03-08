@@ -341,20 +341,22 @@ const RMCPlantPage = () => {
               </div>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {resolvedQualityLabImages.map((src, index) => (
-                  <div
-                    key={src}
-                    className="overflow-hidden rounded-lg border border-primary-foreground/20 bg-primary-foreground/5"
-                  >
-                    <img
-                      src={src}
-                      alt={`Quality Control Lab equipment ${index + 1}`}
-                      className="w-full h-[140px] sm:h-[190px] object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
+              <div className="h-[420px] sm:h-[520px] overflow-hidden rounded-xl border border-primary-foreground/20 bg-primary-foreground/5 p-3 sm:p-4">
+                <div className="flex flex-col gap-3 sm:gap-4 rmc-qc-vertical-marquee">
+                  {resolvedQualityLabImages.concat(resolvedQualityLabImages).map((src, index) => (
+                    <div
+                      key={`${src}-${index}`}
+                      className="rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-2"
+                    >
+                      <img
+                        src={src}
+                        alt={`Quality Control Lab equipment ${(index % resolvedQualityLabImages.length) + 1}`}
+                        className="w-full h-auto max-h-none object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
