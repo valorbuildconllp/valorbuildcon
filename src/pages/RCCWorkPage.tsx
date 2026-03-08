@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import civilWorkImage from "@/assets/rcc-work.jpg";
 import teamImage from "@/assets/team-work.jpg";
 import { useContent } from "@/hooks/use-content";
 import { useImageAssets } from "@/hooks/use-image-assets";
@@ -169,7 +168,7 @@ const CivilWorkPage = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src={civilWorkImage} alt="Civil work execution" className="w-full h-full object-cover" />
+          <img src={resolveImagePath("/images/civil_rcc_work/DSC01093.webp")} alt="Civil work execution" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
