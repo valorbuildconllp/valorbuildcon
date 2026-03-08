@@ -43,10 +43,10 @@ const RMCPlantPage = () => {
   ];
 
   const qualityLabImages = [
-    "/images/rmc_work/IMG_1898.JPG.jpeg",
-    "/images/rmc_work/IMG_1901.JPG.jpeg",
-    "/images/rmc_work/IMG_1903.JPG.jpeg",
-    "/images/rmc_work/IMG_19055.JPG.jpeg",
+    "/images/rmc_work/IMG_1898.JPG.webp",
+    "/images/rmc_work/IMG_1901.JPG.webp",
+    "/images/rmc_work/IMG_1903.JPG.webp",
+    "/images/rmc_work/IMG_19055.JPG.webp",
   ];
 
   const consultancyMarqueeImages = [
