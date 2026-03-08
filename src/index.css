@@ -332,3 +332,16 @@
     }
   }
 }
+
+@keyframes rmcQcVerticalMarquee {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.rmc-qc-vertical-marquee {
+  animation: rmcQcVerticalMarquee 34s linear infinite;
+}
