@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import DirectionalMarquee from "@/components/ui/DirectionalMarquee";
 import rmcImage from "@/assets/rmc-plant.jpg";
-import qualityLab from "@/assets/quality-lab.jpg";
 import { useContent } from "@/hooks/use-content";
 import { useImageAssets } from "@/hooks/use-image-assets";
 
@@ -41,6 +40,13 @@ const RMCPlantPage = () => {
     "Water-Cement Ratio Control",
     "Aggregate Grading Analysis",
     "Temperature Monitoring",
+  ];
+
+  const qualityLabImages = [
+    "/images/rmc_work/IMG_1898.JPG.jpeg",
+    "/images/rmc_work/IMG_1901.JPG.jpeg",
+    "/images/rmc_work/IMG_1903.JPG.jpeg",
+    "/images/rmc_work/IMG_19055.JPG.jpeg",
   ];
 
   const consultancyMarqueeImages = [
@@ -85,6 +91,7 @@ const RMCPlantPage = () => {
 
   const resolvedGalleryImages = galleryImages.map(resolveImagePath);
   const resolvedConsultancyMarqueeImages = consultancyMarqueeImages.map(resolveImagePath);
+  const resolvedQualityLabImages = qualityLabImages.map(resolveImagePath);
 
   return (
     <Layout>
@@ -326,7 +333,21 @@ const RMCPlantPage = () => {
               </div>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
-              <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg" />
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {resolvedQualityLabImages.map((src, index) => (
+                  <div
+                    key={src}
+                    className="overflow-hidden rounded-lg border border-primary-foreground/20 bg-primary-foreground/5"
+                  >
+                    <img
+                      src={src}
+                      alt={`Quality Control Lab equipment ${index + 1}`}
+                      className="w-full h-[140px] sm:h-[190px] object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
