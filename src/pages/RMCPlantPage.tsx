@@ -15,6 +15,9 @@ import { useImageAssets } from "@/hooks/use-image-assets";
 
 const RMCPlantPage = () => {
   const { resolveImagePath } = useImageAssets();
+  const galleryImageSizes = "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw";
+  const squareCardSizes = "(max-width: 767px) 100vw, 33vw";
+  const qcImageSizes = "(max-width: 1023px) 100vw, 50vw";
 
   const plantInfo = [
     { label: "Plant Capacity", value: "70 m³/hr" },
@@ -105,7 +108,15 @@ const RMCPlantPage = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src={resolveImagePath("/images/rmc_work/WhatsApp Image 2026-03-08 at 4.53.23 PM.webp")} alt="RMC Plant" className="w-full h-full object-cover" />
+          <img
+            src={resolveImagePath("/images/rmc_work/WhatsApp Image 2026-03-08 at 4.53.23 PM.webp")}
+            alt="RMC Plant"
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
@@ -237,6 +248,9 @@ const RMCPlantPage = () => {
                   alt={`RMC plant photo ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  fetchPriority="low"
+                  decoding="async"
+                  sizes={galleryImageSizes}
                 />
                 <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
                 <div className="absolute bottom-4 left-4 text-xs font-medium text-background bg-foreground/60 px-3 py-1 rounded-full">
@@ -352,6 +366,9 @@ const RMCPlantPage = () => {
                         alt={`Quality Control Lab equipment ${(index % resolvedQualityLabImages.length) + 1}`}
                         className="w-full h-auto max-h-none object-contain"
                         loading="lazy"
+                        fetchPriority="low"
+                        decoding="async"
+                        sizes={qcImageSizes}
                       />
                     </div>
                   ))}
@@ -395,6 +412,9 @@ const RMCPlantPage = () => {
                     alt={staffMember.name}
                     className="aspect-square w-full rounded-lg object-cover mb-4"
                     loading="lazy"
+                    fetchPriority="low"
+                    decoding="async"
+                    sizes={squareCardSizes}
                   />
                 ) : (
                   <div className="aspect-square rounded-lg bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">

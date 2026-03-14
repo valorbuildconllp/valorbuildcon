@@ -18,6 +18,9 @@ import { useImageAssets } from "@/hooks/use-image-assets";
 
 const CivilWorkPage = () => {
   const { resolveImagePath } = useImageAssets();
+  const galleryImageSizes = "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw";
+  const teamLeadSizes = "(max-width: 1023px) 100vw, 55vw";
+  const teamThumbSizes = "64px";
 
   const civilServices = [
     {
@@ -168,7 +171,15 @@ const CivilWorkPage = () => {
       {/* Hero Section */}
       <section className="relative h-[50vh] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src={resolveImagePath("/images/civil_rcc_work/DSC01093.webp")} alt="Civil work execution" className="w-full h-full object-cover" />
+          <img
+            src={resolveImagePath("/images/civil_rcc_work/DSC01093.webp")}
+            alt="Civil work execution"
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
@@ -331,6 +342,9 @@ const CivilWorkPage = () => {
                       alt={`RCC material image ${index + 1}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      fetchPriority="low"
+                      decoding="async"
+                      sizes={galleryImageSizes}
                     />
                     <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
                   </div>
@@ -372,6 +386,9 @@ const CivilWorkPage = () => {
                           alt={leadMember.name}
                           className="aspect-[4/3] w-full rounded-xl object-cover mb-6"
                           loading="lazy"
+                          fetchPriority="low"
+                          decoding="async"
+                          sizes={teamLeadSizes}
                         />
                       ) : (
                         <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
@@ -401,6 +418,9 @@ const CivilWorkPage = () => {
                               alt={member.name}
                               className="h-16 w-16 rounded-lg object-cover"
                               loading="lazy"
+                              fetchPriority="low"
+                              decoding="async"
+                              sizes={teamThumbSizes}
                             />
                           ) : (
                             <div className="h-16 w-16 rounded-lg bg-muted flex items-center justify-center text-[10px] text-muted-foreground text-center px-2">
@@ -469,6 +489,9 @@ const CivilWorkPage = () => {
                       alt={`Civil work image ${index + 1}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      fetchPriority="low"
+                      decoding="async"
+                      sizes={galleryImageSizes}
                     />
                     <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
                   </div>
@@ -504,7 +527,15 @@ const CivilWorkPage = () => {
               </div>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
-              <img src={teamImage} alt="Safety measures" className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg" />
+              <img
+                src={teamImage}
+                alt="Safety measures"
+                className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg"
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
+                sizes="(max-width: 1023px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
